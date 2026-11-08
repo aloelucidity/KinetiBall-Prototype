@@ -1,13 +1,14 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://bmic8jfu8uo1j"]
 
-[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_g28q7"]
-resource_name = "LowPassFilter"
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
+resource_name = "Phaser"
+rate_hz = 0.05
+feedback = 0.2
+depth = 0.1
 
-[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
-resource_name = "Reverb"
-damping = 0.8
-dry = 0.8
-wet = 0.0
+[sub_resource type="AudioEffectNotchFilter" id="AudioEffectNotchFilter_j3pel"]
+resource_name = "NotchFilter"
+cutoff_hz = 20.0
 
 [resource]
 bus/1/name = &"Main"
@@ -16,9 +17,9 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
 bus/1/send = &"Master"
-bus/1/effect/0/effect = SubResource("AudioEffectLowPassFilter_g28q7")
-bus/1/effect/0/enabled = false
-bus/1/effect/1/effect = SubResource("AudioEffectReverb_g28q7")
+bus/1/effect/0/effect = SubResource("AudioEffectPhaser_j3pel")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectNotchFilter_j3pel")
 bus/1/effect/1/enabled = true
 bus/2/name = &"Underwater"
 bus/2/solo = false

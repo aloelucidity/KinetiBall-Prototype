@@ -5,7 +5,7 @@ extends Node2D
 @export var player_spawner: PlayerSpawner
 @export var character_camera: CharacterCamera
 @export var audio_stream: AudioStream = preload("res://music/bgm.ogg")
-@export_range(-80, 24, 1.0, "prefer_slider") var music_volume: float = -4.0
+@export_range(-80, 24, 0.1, "prefer_slider") var music_volume: float = -4.0
 
 
 func _ready() -> void:

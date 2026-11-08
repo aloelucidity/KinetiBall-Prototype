@@ -382,7 +382,7 @@ script = ExtResource("1_ju52q")
 player_spawner = NodePath("PlayerSpawner")
 character_camera = NodePath("Camera2D")
 audio_stream = ExtResource("2_gw6wc")
-music_volume = 0.0
+music_volume = -0.5
 
 [node name="UI" parent="." unique_id=775632233 instance=ExtResource("2_ju52q")]
 

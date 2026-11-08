@@ -2,8 +2,9 @@ extends Node
 
 
 const BGM_RESTORE_TIME: float = 5
-const UNDERWATER_CUTOFF: float = 1500
-const UNDERWATER_WET: float = 0.05
+const UNDERWATER_PHASER_DEPTH: float = 0.5
+const UNDERWATER_NOTCH_CUTOFF: float = 2000
+const UNDERWATER_TWEEN_TIME: float = 0.2
 
 @onready var main_bus_idx: int = AudioServer.get_bus_index("Main")
 
@@ -62,21 +63,21 @@ func set_underwater(new_underwater: bool) -> void:
 		water_tween.kill()
 	
 	is_underwater = new_underwater
-	var lp_filter: AudioEffectFilter = AudioServer.get_bus_effect(main_bus_idx, 0)
-	var reverb_filter: AudioEffectReverb = AudioServer.get_bus_effect(main_bus_idx, 1)
+	var phaser_filter: AudioEffectPhaser = AudioServer.get_bus_effect(main_bus_idx, 0)
+	var notch_filter: AudioEffectNotchFilter = AudioServer.get_bus_effect(main_bus_idx, 1)
 	
 	if is_underwater:
 		water_tween = create_tween()
 		water_tween.set_parallel()
-		water_tween.tween_property(lp_filter, "cutoff_hz", UNDERWATER_CUTOFF, 0.4)
-		water_tween.tween_property(reverb_filter, "wet", UNDERWATER_WET, 0.4)
-		AudioServer.set_bus_effect_enabled(main_bus_idx, 0, true)
-		AudioServer.set_bus_effect_enabled(main_bus_idx, 1, true)
+		water_tween.tween_property(phaser_filter, "depth", UNDERWATER_PHASER_DEPTH, UNDERWATER_TWEEN_TIME)
+		water_tween.tween_property(notch_filter, "cutoff_hz", UNDERWATER_NOTCH_CUTOFF, UNDERWATER_TWEEN_TIME)
+		#AudioServer.set_bus_effect_enabled(main_bus_idx, 0, true)
+		#AudioServer.set_bus_effect_enabled(main_bus_idx, 1, true)
 	else:
 		water_tween = create_tween()
-		water_tween.tween_property(lp_filter, "cutoff_hz", 20000, 0.4)
-		water_tween.tween_property(reverb_filter, "wet", 0, 0.4)
-		water_tween.finished.connect(disable_effects, CONNECT_ONE_SHOT)
+		water_tween.tween_property(phaser_filter, "depth", 0.1, UNDERWATER_TWEEN_TIME)
+		water_tween.tween_property(notch_filter, "cutoff_hz", 20, UNDERWATER_TWEEN_TIME)
+		#water_tween.finished.connect(disable_effects, CONNECT_ONE_SHOT)
 
 
 func disable_effects() -> void:
