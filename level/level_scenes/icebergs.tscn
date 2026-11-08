@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://biusd4cylqi6a"]
+[gd_scene format=3 uid="uid://biusd4cylqi6a"]
 
 [ext_resource type="Script" uid="uid://r1y7h7ppfe0j" path="res://level/level_scene.gd" id="1_2jjn4"]
 [ext_resource type="PackedScene" uid="uid://m0otgbp4rhtt" path="res://level/ui/ui.tscn" id="2_kvvhj"]
@@ -385,7 +385,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hq3og")
 }],
-"loop": true,
+"loop": 1,
 "name": &"ball",
 "speed": 5.0
 }, {
@@ -393,26 +393,26 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_orckd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }]
 
-[node name="Icebergs2" type="Node2D" node_paths=PackedStringArray("player_spawner", "character_camera")]
+[node name="Icebergs2" type="Node2D" unique_id=951488816 node_paths=PackedStringArray("player_spawner", "character_camera")]
 visibility_layer = 3
 script = ExtResource("1_2jjn4")
 player_spawner = NodePath("PlayerSpawner")
 character_camera = NodePath("Camera2D")
 
-[node name="UI" parent="." instance=ExtResource("2_kvvhj")]
+[node name="UI" parent="." unique_id=185602335 instance=ExtResource("2_kvvhj")]
 
-[node name="BG" parent="." instance=ExtResource("3_iciii")]
+[node name="BG" parent="." unique_id=593791329 instance=ExtResource("3_iciii")]
 
-[node name="Shadows" parent="." instance=ExtResource("4_iciii")]
+[node name="Shadows" parent="." unique_id=1982091437 instance=ExtResource("4_iciii")]
 
-[node name="Parallax" type="Node2D" parent="."]
+[node name="Parallax" type="Node2D" parent="." unique_id=1158040256]
 
-[node name="Back" type="Parallax2D" parent="Parallax"]
+[node name="Back" type="Parallax2D" parent="Parallax" unique_id=1578232565]
 modulate = Color(0.57254905, 0.74509805, 0.9411765, 1)
 scroll_scale = Vector2(0.125, 0.125)
 script = ExtResource("3_l5tdo")
@@ -420,7 +420,7 @@ saturation_mult = 1.2
 brightness_add = -0.15
 contrast_mult = 0.35
 
-[node name="TerrainHelper" parent="Parallax/Back" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper" parent="Parallax/Back" unique_id=1169293458 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 position = Vector2(-1, 144)
 scale = Vector2(0.6, 0.6)
@@ -438,7 +438,7 @@ multimesh = SubResource("MultiMesh_iciii")
 [node name="Edges" parent="Parallax/Back/TerrainHelper" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@175745" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="0"]
+[node name="@Line2D@175745" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="0" unique_id=2066773899]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-730.28076, 638.0995, -482.36438, 103.258156)
@@ -449,7 +449,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175747" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="1"]
+[node name="@Line2D@175747" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="1" unique_id=2025033570]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(1219.5778, 88.84458, 1276.4222, -24.844582)
@@ -460,7 +460,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175749" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="2"]
+[node name="@Line2D@175749" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="2" unique_id=807467163]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2433.4312, 120.12904, 2494.5688, -216.12904)
@@ -471,7 +471,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175751" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="3"]
+[node name="@Line2D@175751" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="3" unique_id=1367580083]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2912, -184, 2912, 248)
@@ -482,7 +482,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175753" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="4"]
+[node name="@Line2D@175753" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="4" unique_id=1536589619]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3904, 312, 3904, -440)
@@ -493,7 +493,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175755" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="5"]
+[node name="@Line2D@175755" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="5" unique_id=1355252377]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(4707.888, -441.0085, 5079.779, 227.67519)
@@ -504,7 +504,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175757" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="6"]
+[node name="@Line2D@175757" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="6" unique_id=1482047523]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(5805.657, 317.0818, 5953, 890.6667, 4704, 1024, -1920, 1088, -1919.0056, -334)
@@ -515,7 +515,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175759" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="7"]
+[node name="@Line2D@175759" type="Line2D" parent="Parallax/Back/TerrainHelper/Edges" index="7" unique_id=228930409]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1606.2, -253.6, -1440, -32, -1304.3119, 266.69098, -740.3111, 640.93445)
@@ -533,7 +533,7 @@ polygon = PackedVector2Array(-479, 96, -119.00001, 84.44445, 446, 122, 608, 96, 
 [node name="Top" parent="Parallax/Back/TerrainHelper" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@175746" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="0"]
+[node name="@Line2D@175746" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="0" unique_id=22003575]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-457.01132, 95.29419, -119.00001, 84.44445, 446, 122, 608, 96, 1194, 96)
@@ -544,7 +544,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175748" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="1"]
+[node name="@Line2D@175748" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="1" unique_id=708195850]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(1301.8655, -29.570507, 1568, 0, 1696, 128, 2410, 128)
@@ -555,7 +555,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175750" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="2"]
+[node name="@Line2D@175750" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="2" unique_id=993078966]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2517.9353, -222.31268, 2890.0647, -193.68732)
@@ -566,7 +566,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175752" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="3"]
+[node name="@Line2D@175752" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="3" unique_id=2112631410]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2933.9543, 257.4164, 3882.0457, 318.5836)
@@ -577,7 +577,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175754" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="4"]
+[node name="@Line2D@175754" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="4" unique_id=557714298]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3926, -448, 4682, -448)
@@ -588,7 +588,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175756" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="5"]
+[node name="@Line2D@175756" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="5" unique_id=179742522]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(5105.55, 236.93599, 5781.784, 307.06403)
@@ -599,7 +599,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175758" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="6"]
+[node name="@Line2D@175758" type="Line2D" parent="Parallax/Back/TerrainHelper/Top" index="6" unique_id=1883515781]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1897.0219, -341.02008, -1762, -335, -1630.7034, -269.78647)
@@ -613,84 +613,84 @@ metadata/_edit_lock_ = true
 [node name="DecorationManual" parent="Parallax/Back/TerrainHelper" index="5"]
 visibility_layer = 3
 
-[node name="Corner" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="0"]
+[node name="Corner" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="0" unique_id=1979501631]
 visibility_layer = 3
 position = Vector2(-476, 106)
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner10" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="1"]
+[node name="Corner10" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="1" unique_id=118332968]
 visibility_layer = 3
 position = Vector2(-1604.3334, -255.99998)
 rotation = -0.13587451
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner11" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="2"]
+[node name="Corner11" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="2" unique_id=111634384]
 visibility_layer = 3
 position = Vector2(-1442, 393.85)
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner6" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="3"]
+[node name="Corner6" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="3" unique_id=567641965]
 visibility_layer = 3
 position = Vector2(3906, -438)
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner3" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="4"]
+[node name="Corner3" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="4" unique_id=2018645038]
 visibility_layer = 3
 position = Vector2(1276, -24)
 rotation = 0.24578631
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner5" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="5"]
+[node name="Corner5" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="5" unique_id=1271709002]
 visibility_layer = 3
 position = Vector2(2495.75, -214.5)
 rotation = 0.12217305
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner9" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="6"]
+[node name="Corner9" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="6" unique_id=1211458823]
 visibility_layer = 3
 position = Vector2(2910.0002, -181.99994)
 rotation = 0.05235988
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner2" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="7"]
+[node name="Corner2" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="7" unique_id=1637350845]
 visibility_layer = 3
 position = Vector2(1210.75, 102)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner13" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="8"]
+[node name="Corner13" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="8" unique_id=868816949]
 visibility_layer = 3
 position = Vector2(-1739, 387)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner14" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="9"]
+[node name="Corner14" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="9" unique_id=911151796]
 visibility_layer = 3
 position = Vector2(-1438, 766)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner12" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="10"]
+[node name="Corner12" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="10" unique_id=156426843]
 visibility_layer = 3
 position = Vector2(1610.9998, 644.0001)
 rotation = -0.6981317
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner4" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="11"]
+[node name="Corner4" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="11" unique_id=1437548524]
 visibility_layer = 3
 position = Vector2(2428, 133)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner8" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="12"]
+[node name="Corner8" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="12" unique_id=1051896954]
 visibility_layer = 3
 position = Vector2(2917, 262.00003)
 rotation = 0.06981317
 texture = ExtResource("9_umfqk")
 
-[node name="Corner7" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="13"]
+[node name="Corner7" type="Sprite2D" parent="Parallax/Back/TerrainHelper/DecorationManual" index="13" unique_id=1643052623]
 visibility_layer = 3
 position = Vector2(3899, 325.5)
 rotation = 0.05235988
@@ -700,7 +700,7 @@ flip_h = true
 [node name="LightOccluder2D" parent="Parallax/Back/TerrainHelper" index="6"]
 occluder = SubResource("OccluderPolygon2D_xuqel")
 
-[node name="Middle" type="Parallax2D" parent="Parallax"]
+[node name="Middle" type="Parallax2D" parent="Parallax" unique_id=1283637772]
 modulate = Color(0.7882353, 0.8745098, 0.972549, 1)
 scroll_scale = Vector2(0.25, 0.25)
 script = ExtResource("3_l5tdo")
@@ -708,7 +708,7 @@ saturation_mult = 1.1
 brightness_add = -0.075
 contrast_mult = 0.675
 
-[node name="TerrainHelper" parent="Parallax/Middle" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper" parent="Parallax/Middle" unique_id=1183368240 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 position = Vector2(-1, 80)
 scale = Vector2(0.85, 0.85)
@@ -726,7 +726,7 @@ multimesh = SubResource("MultiMesh_p0svs")
 [node name="Edges" parent="Parallax/Middle/TerrainHelper" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@175730" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="0"]
+[node name="@Line2D@175730" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="0" unique_id=997989351]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-735.84106, 637.6649, -924.8041, -24.307281)
@@ -737,7 +737,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175732" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="1"]
+[node name="@Line2D@175732" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="1" unique_id=2049770869]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(1219.5778, 88.84458, 1276.4222, -24.844582)
@@ -748,7 +748,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175734" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="2"]
+[node name="@Line2D@175734" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="2" unique_id=2074551599]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2433.4312, 120.12904, 2494.5688, -216.12904)
@@ -759,7 +759,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175736" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="3"]
+[node name="@Line2D@175736" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="3" unique_id=1031047907]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2912, -184, 2912, 248)
@@ -770,7 +770,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175738" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="4"]
+[node name="@Line2D@175738" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="4" unique_id=1334104814]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3904, 312, 3904, -440)
@@ -781,7 +781,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175740" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="5"]
+[node name="@Line2D@175740" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="5" unique_id=454264936]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(4707.888, -441.0085, 5079.779, 227.67519)
@@ -792,7 +792,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175742" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="6"]
+[node name="@Line2D@175742" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="6" unique_id=1833926318]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(5805.657, 317.0818, 5953, 890.6667, 4704, 1024, -1920, 1088, -1919.0056, -334)
@@ -803,7 +803,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175744" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="7"]
+[node name="@Line2D@175744" type="Line2D" parent="Parallax/Middle/TerrainHelper/Edges" index="7" unique_id=455339696]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1606.2, -253.6, -1440, -32, -1304.3119, 266.69098, -740.3111, 640.93445)
@@ -821,7 +821,7 @@ polygon = PackedVector2Array(-927, -32, -119.00001, 84.44445, 446, 122, 608, 96,
 [node name="Top" parent="Parallax/Middle/TerrainHelper" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@175731" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="0"]
+[node name="@Line2D@175731" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="0" unique_id=111506562]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-905.225, -28.861902, -119.00001, 84.44445, 446, 122, 608, 96, 1194, 96)
@@ -832,7 +832,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175733" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="1"]
+[node name="@Line2D@175733" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="1" unique_id=1154971422]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(1301.8655, -29.570507, 1568, 0, 1696, 128, 2410, 128)
@@ -843,7 +843,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175735" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="2"]
+[node name="@Line2D@175735" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="2" unique_id=532658795]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2517.9353, -222.31268, 2890.0647, -193.68732)
@@ -854,7 +854,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175737" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="3"]
+[node name="@Line2D@175737" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="3" unique_id=429307621]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2933.9543, 257.4164, 3882.0457, 318.5836)
@@ -865,7 +865,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175739" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="4"]
+[node name="@Line2D@175739" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="4" unique_id=1353575071]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3926, -448, 4682, -448)
@@ -876,7 +876,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175741" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="5"]
+[node name="@Line2D@175741" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="5" unique_id=1047515822]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(5105.55, 236.93599, 5781.784, 307.06403)
@@ -887,7 +887,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@175743" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="6"]
+[node name="@Line2D@175743" type="Line2D" parent="Parallax/Middle/TerrainHelper/Top" index="6" unique_id=488597880]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1897.0219, -341.02008, -1762, -335, -1630.7034, -269.78647)
@@ -901,73 +901,73 @@ metadata/_edit_lock_ = true
 [node name="DecorationManual" parent="Parallax/Middle/TerrainHelper" index="5"]
 visibility_layer = 3
 
-[node name="Corner10" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="0"]
+[node name="Corner10" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="0" unique_id=1012387711]
 visibility_layer = 3
 position = Vector2(-1604.3334, -255.99998)
 rotation = -0.13587451
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner6" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="1"]
+[node name="Corner6" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="1" unique_id=1034829075]
 visibility_layer = 3
 position = Vector2(3906, -438)
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner3" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="2"]
+[node name="Corner3" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="2" unique_id=1665011822]
 visibility_layer = 3
 position = Vector2(1276, -24)
 rotation = 0.24578631
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner5" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="3"]
+[node name="Corner5" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="3" unique_id=266896979]
 visibility_layer = 3
 position = Vector2(2495.75, -214.5)
 rotation = 0.12217305
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner9" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="4"]
+[node name="Corner9" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="4" unique_id=1312515754]
 visibility_layer = 3
 position = Vector2(2910.0002, -181.99994)
 rotation = 0.05235988
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner2" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="5"]
+[node name="Corner2" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="5" unique_id=654060187]
 visibility_layer = 3
 position = Vector2(1210.75, 102)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner13" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="6"]
+[node name="Corner13" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="6" unique_id=475303253]
 visibility_layer = 3
 position = Vector2(-1739, 387)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner14" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="7"]
+[node name="Corner14" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="7" unique_id=1458761830]
 visibility_layer = 3
 position = Vector2(-1438, 766)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner12" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="8"]
+[node name="Corner12" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="8" unique_id=1596880826]
 visibility_layer = 3
 position = Vector2(1610.9996, 635.765)
 rotation = -0.6981317
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner4" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="9"]
+[node name="Corner4" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="9" unique_id=49589104]
 visibility_layer = 3
 position = Vector2(2428, 133)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner8" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="10"]
+[node name="Corner8" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="10" unique_id=1144995765]
 visibility_layer = 3
 position = Vector2(2917, 262.00003)
 rotation = 0.06981317
 texture = ExtResource("9_umfqk")
 
-[node name="Corner7" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="11"]
+[node name="Corner7" type="Sprite2D" parent="Parallax/Middle/TerrainHelper/DecorationManual" index="11" unique_id=1847754899]
 visibility_layer = 3
 position = Vector2(3899, 325.5)
 rotation = 0.05235988
@@ -977,28 +977,26 @@ flip_h = true
 [node name="LightOccluder2D" parent="Parallax/Middle/TerrainHelper" index="6"]
 occluder = SubResource("OccluderPolygon2D_mi0uo")
 
-[node name="Terrain" type="Node2D" parent="."]
+[node name="Terrain" type="Node2D" parent="." unique_id=482966204]
 visibility_layer = 3
 z_index = 1
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Terrain"]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Terrain" unique_id=2124367891]
 visibility_layer = 3
 position = Vector2(1200, -1000)
 
-[node name="OneWay" type="CollisionPolygon2D" parent="Terrain/AnimatableBody2D"]
+[node name="OneWay" type="CollisionPolygon2D" parent="Terrain/AnimatableBody2D" unique_id=1137102884]
 build_mode = 1
 polygon = PackedVector2Array(-587, -192, -467, -192, -439, -192, -439, -160, -587, -160)
 one_way_collision = true
 script = ExtResource("10_1idy2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Terrain/AnimatableBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Terrain/AnimatableBody2D" unique_id=1734224909]
 callback_mode_process = 0
-libraries = {
-&"": SubResource("AnimationLibrary_kek77")
-}
+libraries/ = SubResource("AnimationLibrary_kek77")
 script = ExtResource("3_7fust")
 
-[node name="Water" parent="Terrain" instance=ExtResource("11_852y8")]
+[node name="Water" parent="Terrain" unique_id=1094815687 instance=ExtResource("11_852y8")]
 visibility_layer = 3
 position = Vector2(-4256, 128)
 scale = Vector2(1, 0.98944056)
@@ -1017,11 +1015,11 @@ polygon = PackedVector2Array(8337, 32, 8316.979, 32, 8296.958, 32, 8276.937, 32,
 [node name="Edge" parent="Terrain/Water" index="4"]
 points = PackedVector2Array(8337, 32, 8316.979, 32, 8296.958, 32, 8276.937, 32, 8256.916, 32, 8236.895, 32, 8216.874, 32, 8196.853, 32, 8176.832, 32, 8156.811, 32, 8136.79, 32, 8116.769, 32, 8096.748, 32, 8076.727, 32, 8056.706, 32, 8036.685, 32, 8016.664, 32, 7996.643, 32, 7976.622, 32, 7956.6006, 32, 7936.58, 32, 7916.5586, 32, 7896.5376, 32, 7876.5166, 32, 7856.4956, 32, 7836.4746, 32, 7816.4536, 32, 7796.4326, 32, 7776.4116, 32, 7756.3906, 32, 7736.3696, 32, 7716.3486, 32, 7696.3276, 32, 7676.3066, 32, 7656.2856, 32, 7636.2646, 32, 7616.2437, 32, 7596.2227, 32, 7576.2017, 32, 7556.1807, 32, 7536.1597, 32, 7516.1387, 32, 7496.1177, 32, 7476.0967, 32, 7456.0757, 32, 7436.0547, 32, 7416.0337, 32, 7396.0127, 32, 7375.9917, 32, 7355.9707, 32, 7335.9497, 32, 7315.9287, 32, 7295.9077, 32, 7275.8867, 32, 7255.8657, 32, 7235.8447, 32, 7215.823, 32, 7195.8027, 32, 7175.7813, 32, 7155.7607, 32, 7135.7393, 32, 7115.7183, 32, 7095.6973, 32, 7075.6763, 32, 7055.6553, 32, 7035.6343, 32, 7015.6133, 32, 6995.5923, 32, 6975.5713, 32, 6955.5503, 32, 6935.5293, 32, 6915.5083, 32, 6895.4873, 32, 6875.4663, 32, 6855.4453, 32, 6835.4243, 32, 6815.4033, 32, 6795.3823, 32, 6775.3613, 32, 6755.3403, 32, 6735.3193, 32, 6715.2983, 32, 6695.2773, 32, 6675.2563, 32, 6655.2354, 32, 6635.2144, 32, 6615.1934, 32, 6595.1724, 32, 6575.1514, 32, 6555.1304, 32, 6535.1094, 32, 6515.0884, 32, 6495.0674, 32, 6475.046, 32, 6455.0254, 32, 6435.004, 32, 6414.9834, 32, 6394.962, 32, 6374.9414, 32, 6354.92, 32, 6334.8994, 32, 6314.878, 32, 6294.8574, 32, 6274.836, 32, 6254.8154, 32, 6234.794, 32, 6214.7734, 32, 6194.752, 32, 6174.7314, 32, 6154.71, 32, 6134.689, 32, 6114.668, 32, 6094.647, 32, 6074.626, 32, 6054.605, 32, 6034.584, 32, 6014.563, 32, 5994.542, 32, 5974.521, 32, 5954.5, 32, 5934.4785, 32, 5914.458, 32, 5894.4365, 32, 5874.416, 32, 5854.3945, 32, 5834.374, 32, 5814.3525, 32, 5794.332, 32, 5774.3105, 32, 5754.29, 32, 5734.2686, 32, 5714.248, 32, 5694.2266, 32, 5674.206, 32, 5654.1846, 32, 5634.164, 32, 5614.1426, 32, 5594.122, 32, 5574.1006, 32, 5554.08, 32, 5534.0586, 32, 5514.038, 32, 5494.0166, 32, 5473.996, 32, 5453.9746, 32, 5433.954, 32, 5413.9326, 32, 5393.912, 32, 5373.8906, 32, 5353.87, 32, 5333.8486, 32, 5313.828, 32, 5293.8066, 32, 5273.7856, 32, 5253.7646, 32, 5233.7437, 32, 5213.7227, 32, 5193.7017, 32, 5173.6807, 32, 5153.6597, 32, 5133.6387, 32, 5113.6177, 32, 5093.5967, 32, 5073.5757, 32, 5053.5547, 32, 5033.5337, 32, 5013.5127, 32, 4993.4917, 32, 4973.4707, 32, 4953.4497, 32, 4933.4287, 32, 4913.4077, 32, 4893.3867, 32, 4873.3657, 32, 4853.3447, 32, 4833.323, 32, 4813.3027, 32, 4793.2813, 32, 4773.2607, 32, 4753.2393, 32, 4733.2188, 32, 4713.1973, 32, 4693.177, 32, 4673.1553, 32, 4653.1343, 32, 4633.1133, 32, 4613.0923, 32, 4593.0713, 32, 4573.0503, 32, 4553.0293, 32, 4533.0083, 32, 4512.9873, 32, 4492.9663, 32, 4472.9453, 32, 4452.9243, 32, 4432.9033, 32, 4412.8823, 32, 4392.8613, 32, 4372.8403, 32, 4352.8193, 32, 4332.7983, 32, 4312.7773, 32, 4292.7563, 32, 4272.7354, 32, 4252.7144, 32, 4232.6934, 32, 4212.6724, 32, 4192.6514, 32, 4172.6304, 32, 4152.6094, 32, 4132.5884, 32, 4112.5674, 32, 4092.5464, 32, 4072.5254, 32, 4052.5044, 32, 4032.4834, 32, 4012.4624, 32, 3992.4414, 32, 3972.42, 32, 3952.3994, 32, 3932.378, 32, 3912.3574, 32, 3892.336, 32, 3872.3154, 32, 3852.294, 32, 3832.2734, 32, 3812.252, 32, 3792.2314, 32, 3772.21, 32, 3752.189, 32, 3732.168, 32, 3712.147, 32, 3692.126, 32, 3672.105, 32, 3652.084, 32, 3632.063, 32, 3612.042, 32, 3592.021, 32, 3572, 32, 3551.9824, 32, 3531.9648, 32, 3511.9473, 32, 3491.93, 32, 3471.9124, 32, 3451.8948, 32, 3431.8772, 32, 3411.8596, 32, 3391.842, 32, 3371.8245, 32, 3351.8071, 32, 3331.7896, 32, 3311.772, 32, 3291.7544, 32, 3271.7368, 32, 3251.7192, 32, 3231.7017, 32, 3211.6843, 32, 3191.6667, 32, 3171.6492, 32, 3151.6316, 32, 3131.614, 32, 3111.5964, 32, 3091.5789, 32, 3071.5615, 32, 3051.544, 32, 3031.5264, 32, 3011.5088, 32, 2991.4912, 32, 2971.4736, 32, 2951.456, 32, 2931.4385, 32, 2911.4211, 32, 2891.4036, 32, 2871.386, 32, 2851.3684, 32, 2831.3508, 32, 2811.3333, 32, 2791.316, 32, 2771.2983, 32, 2751.2808, 32, 2731.2632, 32, 2711.2456, 32, 2691.228, 32, 2671.2104, 32, 2651.1929, 32, 2631.1753, 32, 2611.158, 32, 2591.1404, 32, 2571.1228, 32, 2551.1052, 32, 2531.088, 32, 2511.0703, 32, 2491.0527, 32, 2471.0352, 32, 2451.0176, 32, 2431, 32, 2405, 744, 8766.999, 715.55585, 8747.999, 30.32016)
 
-[node name="Terrain" type="StaticBody2D" parent="Terrain"]
+[node name="Terrain" type="StaticBody2D" parent="Terrain" unique_id=1695128558]
 visibility_layer = 3
 collision_mask = 0
 
-[node name="TerrainHelper" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper" parent="Terrain/Terrain" unique_id=2055337965 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 position = Vector2(-1, 0)
 polygon = PackedVector2Array(-479, 96, -127, 96, 446, 122, 608, 96, 1216, 96, 1280, -32, 1568, 0, 1696, 128, 2432, 128, 2431, 289, 2320, 322, 2240, 232, 1982, 255, 1905, 437, 2003, 639, 2263, 637, 2295, 533, 2423.9287, 536.4845, 2421, 639, 2648, 577, 3532, 616, 3765.855, 533.1099, 3983, 538, 4093, 542, 4097, 794, 4477, 800, 4491, 517, 4468, 250, 4407, 131, 4420, -191, 4293, -248, 4169, -201, 4170, 134, 4069, 224, 3730, 203, 3718, 20, 3819, 9, 3802, -124, 3913, -133, 3904, -448, 4704, -448, 4704, 1024, -1920, 1088, -1919, -342, -1762, -335, -1611, -260, -1441.6569, -262.29846, -1440, -32, -1441, 244, -1502, 241, -1505, 0, -1568, -130, -1731, -126, -1795, 3, -1795, 247, -1744, 381, -1440, 384, -1441, 760, -493, 780, 449, 662, 803, 799, 1470, 752, 1613, 636, 1721, 348, 1341, 242, 940, 238, 599, 304, 418, 466, -472, 602)
@@ -1037,7 +1035,7 @@ multimesh = SubResource("MultiMesh_t5saf")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@61396" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="0"]
+[node name="@Line2D@61396" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="0" unique_id=64473651]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-472.11066, 594.0008, -478.88934, 103.99924)
@@ -1048,7 +1046,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61398" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="1"]
+[node name="@Line2D@61398" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="1" unique_id=2134649703]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(1219.5778, 88.84458, 1276.4222, -24.844582)
@@ -1059,7 +1057,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61400" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="2"]
+[node name="@Line2D@61400" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="2" unique_id=178919052]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2431.9502, 135.99985, 2431, 289, 2320, 322, 2240, 232, 1982, 255, 1905, 437, 1999.508, 631.8023)
@@ -1070,7 +1068,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61402" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="3"]
+[node name="@Line2D@61402" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="3" unique_id=1162563073]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2265.3528, 629.35376, 2292.6472, 540.64624)
@@ -1081,7 +1079,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61404" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="4"]
+[node name="@Line2D@61404" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="4" unique_id=87984854]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2423.7002, 544.48126, 2421.2285, 631.00323)
@@ -1092,7 +1090,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61406" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="5"]
+[node name="@Line2D@61406" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="5" unique_id=846124152]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(4093.127, 549.99896, 4096.873, 786.001)
@@ -1103,7 +1101,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61408" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="6"]
+[node name="@Line2D@61408" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="6" unique_id=210754235]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(4477.3955, 792.00977, 4491, 517, 4468, 250, 4407, 131, 4420, -191, 4293, -248, 4169, -201, 4170, 134, 4069, 224, 3730, 203, 3718.5264, 28.982668)
@@ -1114,7 +1112,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61410" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="7"]
+[node name="@Line2D@61410" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="7" unique_id=2012506067]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3817.9856, 1.0645614, 3803.0144, -116.06456)
@@ -1125,7 +1123,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61412" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="8"]
+[node name="@Line2D@61412" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="8" unique_id=1339707057]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3912.7715, -140.99673, 3904.2285, -440.00327)
@@ -1136,7 +1134,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61414" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="9"]
+[node name="@Line2D@61414" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="9" unique_id=52510755]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(4704, -440, 4704, 1024, -1920, 1088, -1919.0056, -334)
@@ -1147,7 +1145,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61416" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="10"]
+[node name="@Line2D@61416" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="10" unique_id=1815039485]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1441.5994, -254.29868, -1440, -32, -1441, 244, -1502, 241, -1505, 0, -1568, -130, -1731, -126, -1795, 3, -1795, 247, -1746.8457, 373.52322)
@@ -1158,7 +1156,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61418" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="11"]
+[node name="@Line2D@61418" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="11" unique_id=821507917]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1440.0212, 391.99997, -1440.9788, 752)
@@ -1169,7 +1167,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61420" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="12"]
+[node name="@Line2D@61420" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Edges" index="12" unique_id=1338433759]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(1615.809, 628.50934, 1721, 348, 1341, 242, 940, 238, 599, 304, 418, 466, -464.0918, 600.79156)
@@ -1187,7 +1185,7 @@ polygon = PackedVector2Array(-479, 96, -127, 96, 446, 122, 608, 96, 1216, 96, 12
 [node name="Top" parent="Terrain/Terrain/TerrainHelper" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@61397" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="0"]
+[node name="@Line2D@61397" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="0" unique_id=1529545698]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-457, 96, -127, 96, 446, 122, 608, 96, 1194, 96)
@@ -1198,7 +1196,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61399" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="1"]
+[node name="@Line2D@61399" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="1" unique_id=1593098080]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(1301.8655, -29.570507, 1568, 0, 1696, 128, 2410, 128)
@@ -1209,7 +1207,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61401" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="2"]
+[node name="@Line2D@61401" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="2" unique_id=628761306]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2024.9994, 638.83075, 2241.0007, 637.16925)
@@ -1220,7 +1218,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61403" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="3"]
+[node name="@Line2D@61403" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="3" unique_id=1030250212]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2316.992, 533.59436, 2401.9368, 535.89014)
@@ -1231,7 +1229,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61405" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="4"]
+[node name="@Line2D@61405" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="4" unique_id=1700839009]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(2442.2227, 633.2035, 2648, 577, 3532, 616, 3765.855, 533.1099, 3983, 538, 4071.0146, 541.2005)
@@ -1242,7 +1240,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61407" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="5"]
+[node name="@Line2D@61407" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="5" unique_id=1392777473]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(4118.997, 794.34735, 4455.003, 799.65265)
@@ -1253,7 +1251,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61409" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="6"]
+[node name="@Line2D@61409" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="6" unique_id=350726589]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3739.8464, 18.404394, 3797.1536, 11.595608)
@@ -1264,7 +1262,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61411" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="7"]
+[node name="@Line2D@61411" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="7" unique_id=996386368]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3823.928, -125.77795, 3891.072, -131.22205)
@@ -1275,7 +1273,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61413" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="8"]
+[node name="@Line2D@61413" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="8" unique_id=1611305428]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(3926, -448, 4682, -448)
@@ -1286,7 +1284,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61415" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="9"]
+[node name="@Line2D@61415" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="9" unique_id=119060270]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1897.0219, -341.02008, -1762, -335, -1611, -260, -1463.6548, -261.99988)
@@ -1297,7 +1295,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61417" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="10"]
+[node name="@Line2D@61417" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="10" unique_id=1378722186]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1722.0011, 381.2171, -1461.9989, 383.7829)
@@ -1308,7 +1306,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@61419" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="11"]
+[node name="@Line2D@61419" type="Line2D" parent="Terrain/Terrain/TerrainHelper/Top" index="11" unique_id=1044816186]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1419.0049, 760.46405, -493, 780, 449, 662, 803, 799, 1470, 752, 1595.9146, 649.85956)
@@ -1322,63 +1320,63 @@ metadata/_edit_lock_ = true
 [node name="DecorationManual" parent="Terrain/Terrain/TerrainHelper" index="5"]
 visibility_layer = 3
 
-[node name="Corner" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="0"]
+[node name="Corner" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="0" unique_id=1120212282]
 visibility_layer = 3
 position = Vector2(-476, 106)
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner29" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="1"]
+[node name="Corner29" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="1" unique_id=319813286]
 visibility_layer = 3
 z_index = 2
 position = Vector2(-561.00006, -570)
 rotation = -0.14058381
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner10" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="2"]
+[node name="Corner10" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="2" unique_id=1627794644]
 visibility_layer = 3
 position = Vector2(-1444, -252)
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner11" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="3"]
+[node name="Corner11" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="3" unique_id=2120926562]
 visibility_layer = 3
 position = Vector2(-1442, 393.85)
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner6" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="4"]
+[node name="Corner6" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="4" unique_id=756708009]
 visibility_layer = 3
 position = Vector2(3906, -438)
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner3" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="5"]
+[node name="Corner3" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="5" unique_id=1619437204]
 visibility_layer = 3
 position = Vector2(1276, -24)
 rotation = 0.24578631
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner23" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="6"]
+[node name="Corner23" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="6" unique_id=2139387429]
 visibility_layer = 3
 z_index = 1
 position = Vector2(689, -309)
 rotation = 0.05454476
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner24" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="7"]
+[node name="Corner24" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="7" unique_id=856494434]
 visibility_layer = 3
 z_index = 1
 position = Vector2(861.00006, -438)
 rotation = 0.05454476
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner25" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="8"]
+[node name="Corner25" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="8" unique_id=900764360]
 visibility_layer = 3
 z_index = 1
 position = Vector2(945.99994, -599)
 rotation = 0.05454476
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner33" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="9"]
+[node name="Corner33" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="9" unique_id=1285259462]
 visibility_layer = 3
 z_index = 1
 position = Vector2(466, -1380)
@@ -1386,7 +1384,7 @@ rotation = 0.05454476
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner34" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="10"]
+[node name="Corner34" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="10" unique_id=338021578]
 visibility_layer = 3
 z_index = 1
 position = Vector2(1028, -831)
@@ -1394,7 +1392,7 @@ rotation = 0.05454476
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner35" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="11"]
+[node name="Corner35" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="11" unique_id=2040232142]
 visibility_layer = 3
 z_index = 1
 position = Vector2(1270.0001, -598)
@@ -1402,138 +1400,138 @@ rotation = 0.05454476
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner5" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="12"]
+[node name="Corner5" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="12" unique_id=289824179]
 visibility_layer = 3
 position = Vector2(3804.9998, -113.99997)
 rotation = -0.10439744
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner9" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="13"]
+[node name="Corner9" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="13" unique_id=731911432]
 visibility_layer = 3
 position = Vector2(3722, 27)
 rotation = 0.05235988
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner2" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="14"]
+[node name="Corner2" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="14" unique_id=1723703124]
 visibility_layer = 3
 position = Vector2(1210.75, 102)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner26" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="15"]
+[node name="Corner26" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="15" unique_id=605936383]
 visibility_layer = 3
 z_index = 1
 position = Vector2(857, -315)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner28" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="16"]
+[node name="Corner28" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="16" unique_id=6037778]
 visibility_layer = 3
 z_index = 1
 position = Vector2(473, -762)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner27" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="17"]
+[node name="Corner27" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="17" unique_id=151271886]
 visibility_layer = 3
 z_index = 1
 position = Vector2(943, -447)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner13" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="18"]
+[node name="Corner13" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="18" unique_id=1408590515]
 visibility_layer = 3
 position = Vector2(-1739, 387)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner16" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="19"]
+[node name="Corner16" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="19" unique_id=169897635]
 visibility_layer = 3
 position = Vector2(1998, 644)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner17" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="20"]
+[node name="Corner17" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="20" unique_id=337692372]
 visibility_layer = 3
 position = Vector2(2419, 644)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner18" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="21"]
+[node name="Corner18" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="21" unique_id=1845749923]
 visibility_layer = 3
 position = Vector2(2266, 643)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner19" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="22"]
+[node name="Corner19" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="22" unique_id=373028950]
 visibility_layer = 3
 position = Vector2(4480, 807)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner20" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="23"]
+[node name="Corner20" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="23" unique_id=1716590172]
 visibility_layer = 3
 position = Vector2(4094, 801)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner21" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="24"]
+[node name="Corner21" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="24" unique_id=1972549935]
 visibility_layer = 3
 position = Vector2(3824, 16)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner22" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="25"]
+[node name="Corner22" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="25" unique_id=150884040]
 visibility_layer = 3
 position = Vector2(3919, -127)
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner14" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="26"]
+[node name="Corner14" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="26" unique_id=1724441612]
 visibility_layer = 3
 position = Vector2(-1438, 766)
 texture = ExtResource("9_umfqk")
 
-[node name="Corner12" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="27"]
+[node name="Corner12" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="27" unique_id=1765812262]
 visibility_layer = 3
 position = Vector2(1610.9998, 644.0001)
 rotation = -0.6981317
 texture = ExtResource("9_umfqk")
 flip_h = true
 
-[node name="Corner4" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="28"]
+[node name="Corner4" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="28" unique_id=1641798387]
 visibility_layer = 3
 position = Vector2(2430, 137)
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner30" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="29"]
+[node name="Corner30" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="29" unique_id=844915102]
 visibility_layer = 3
 position = Vector2(2423, 546)
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner31" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="30"]
+[node name="Corner31" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="30" unique_id=1999040281]
 visibility_layer = 3
 position = Vector2(2294.0002, 541.00006)
 rotation = 0.27574763
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner15" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="31"]
+[node name="Corner15" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="31" unique_id=242273778]
 visibility_layer = 3
 position = Vector2(4093, 552)
 texture = ExtResource("8_vbgjs")
 flip_h = true
 
-[node name="Corner8" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="32"]
+[node name="Corner8" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="32" unique_id=2116480623]
 visibility_layer = 3
 position = Vector2(3420, -247.99997)
 rotation = 0.06981317
 texture = ExtResource("9_umfqk")
 
-[node name="Corner32" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="33"]
+[node name="Corner32" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="33" unique_id=658933492]
 visibility_layer = 3
 z_index = 1
 position = Vector2(131.00003, -1387.0001)
 rotation = -0.19355598
 texture = ExtResource("8_vbgjs")
 
-[node name="Corner7" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="34"]
+[node name="Corner7" type="Sprite2D" parent="Terrain/Terrain/TerrainHelper/DecorationManual" index="34" unique_id=156434604]
 visibility_layer = 3
 position = Vector2(3787, -305)
 rotation = 0.05235988
@@ -1543,35 +1541,35 @@ flip_h = true
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper" index="6"]
 occluder = SubResource("OccluderPolygon2D_qen6x")
 
-[node name="OneWay" type="CollisionPolygon2D" parent="Terrain/Terrain"]
+[node name="OneWay" type="CollisionPolygon2D" parent="Terrain/Terrain" unique_id=2074701127]
 position = Vector2(-194, 61)
 build_mode = 1
 polygon = PackedVector2Array(-800, -192, -256, -192, -256, -160, -800, -160)
 one_way_collision = true
 script = ExtResource("10_1idy2")
 
-[node name="OneWay2" type="CollisionPolygon2D" parent="Terrain/Terrain"]
+[node name="OneWay2" type="CollisionPolygon2D" parent="Terrain/Terrain" unique_id=593198612]
 position = Vector2(133, -95)
 build_mode = 1
 polygon = PackedVector2Array(-800, -192, -256, -192, -256, -160, -800, -160)
 one_way_collision = true
 script = ExtResource("10_1idy2")
 
-[node name="OneWay3" type="CollisionPolygon2D" parent="Terrain/Terrain"]
+[node name="OneWay3" type="CollisionPolygon2D" parent="Terrain/Terrain" unique_id=1311540449]
 position = Vector2(1201, -80)
 build_mode = 1
 polygon = PackedVector2Array(-800, -192, -256, -192, -256, -160, -800, -160)
 one_way_collision = true
 script = ExtResource("10_1idy2")
 
-[node name="OneWay4" type="CollisionPolygon2D" parent="Terrain/Terrain"]
+[node name="OneWay4" type="CollisionPolygon2D" parent="Terrain/Terrain" unique_id=2107328300]
 position = Vector2(1576, -594)
 build_mode = 1
 polygon = PackedVector2Array(-800, -192, -256, -192, -256, -160, -800, -160)
 one_way_collision = true
 script = ExtResource("10_1idy2")
 
-[node name="TerrainHelper2" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper2" parent="Terrain/Terrain" unique_id=1943522253 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 z_index = -1
 position = Vector2(1407.042, 305.90167)
@@ -1597,7 +1595,7 @@ texture = ExtResource("13_a3x3d")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper2" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@59933" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Edges" index="0"]
+[node name="@Line2D@59933" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Edges" index="0" unique_id=1346958184]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2705.1548, -532.24243, -2703.102, -634.9023)
@@ -1608,7 +1606,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@59935" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Edges" index="1"]
+[node name="@Line2D@59935" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Edges" index="1" unique_id=1485554712]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2154.9958, -690.90204, -2151.042, -433.90167, -2291.042, 174.09833, -2527.042, 174.09833, -2519.042, -81.90167, -2711.042, -237.90167, -2713.9897, -406.90213)
@@ -1619,7 +1617,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@59937" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Edges" index="2"]
+[node name="@Line2D@59937" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Edges" index="2" unique_id=1094784794]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2617.0151, -412.90155, -2616.042, -521.9017, -2702.2249, -528.9969)
@@ -1639,7 +1637,7 @@ polygon = PackedVector2Array(-2703.042, -637.9017, -2519.042, -653.9017, -2355.0
 [node name="Top" parent="Terrain/Terrain/TerrainHelper2" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@59934" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Top" index="0"]
+[node name="@Line2D@59934" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Top" index="0" unique_id=1425026457]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2685.1096, -639.461, -2519.042, -653.9017, -2355.042, -697.9017, -2173.0383, -694.2616)
@@ -1650,7 +1648,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@59936" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Top" index="1"]
+[node name="@Line2D@59936" type="Line2D" parent="Terrain/Terrain/TerrainHelper2/Top" index="1" unique_id=286056806]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2696.042, -409.90167, -2635.042, -409.90167)
@@ -1667,7 +1665,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper2" index="6"]
 occluder = SubResource("OccluderPolygon2D_hhv6b")
 
-[node name="TerrainHelper5" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper5" parent="Terrain/Terrain" unique_id=379382091 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 z_index = -1
 position = Vector2(3412, 1077)
@@ -1693,7 +1691,7 @@ texture = ExtResource("13_a3x3d")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper5" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@56981" type="Line2D" parent="Terrain/Terrain/TerrainHelper5/Edges" index="0"]
+[node name="@Line2D@56981" type="Line2D" parent="Terrain/Terrain/TerrainHelper5/Edges" index="0" unique_id=1020632520]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2702.0215, -495.9999, -2703.0205, -634.90173)
@@ -1704,7 +1702,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@56983" type="Line2D" parent="Terrain/Terrain/TerrainHelper5/Edges" index="1"]
+[node name="@Line2D@56983" type="Line2D" parent="Terrain/Terrain/TerrainHelper5/Edges" index="1" unique_id=1765106661]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1964.2478, -600.0131, -2074, -503, -2397, -441, -2699.0427, -492.4958)
@@ -1724,7 +1722,7 @@ polygon = PackedVector2Array(-2703.042, -637.9017, -2217, -675, -1962, -602, -20
 [node name="Top" parent="Terrain/Terrain/TerrainHelper5" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@56982" type="Line2D" parent="Terrain/Terrain/TerrainHelper5/Top" index="0"]
+[node name="@Line2D@56982" type="Line2D" parent="Terrain/Terrain/TerrainHelper5/Top" index="0" unique_id=853483378]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2685.0942, -639.2716, -2217, -675, -1979.3048, -606.9539)
@@ -1741,7 +1739,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper5" index="6"]
 occluder = SubResource("OccluderPolygon2D_wgjkm")
 
-[node name="TerrainHelper6" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper6" parent="Terrain/Terrain" unique_id=1057105770 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 z_index = -1
 position = Vector2(5746, 484)
@@ -1767,7 +1765,7 @@ texture = ExtResource("13_a3x3d")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper6" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@103862" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="0"]
+[node name="@Line2D@103862" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="0" unique_id=2128595889]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2707.9138, -469.99875, -2703.0862, -638.0012)
@@ -1778,7 +1776,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103864" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="1"]
+[node name="@Line2D@103864" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="1" unique_id=703856300]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2534.8616, -640.22437, -2448.1384, -428.77563)
@@ -1789,7 +1787,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103866" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="2"]
+[node name="@Line2D@103866" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="2" unique_id=1608795806]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2327.256, -402.01096, -2336, -300, -2573, -33, -2908, -41, -2996, -250, -3131, -284, -3134.8445, -358.00403)
@@ -1800,7 +1798,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103868" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="3"]
+[node name="@Line2D@103868" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="3" unique_id=391757038]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3078.9539, -368.99963, -3078.0461, -428.00037)
@@ -1811,7 +1809,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103870" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="4"]
+[node name="@Line2D@103870" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="4" unique_id=1779848521]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3008.8464, -429.00394, -3007.1536, -395.99606)
@@ -1822,7 +1820,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103872" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="5"]
+[node name="@Line2D@103872" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="5" unique_id=865027708]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2943.1372, -396.99686, -2948.8628, -522.0031)
@@ -1833,7 +1831,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103874" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="6"]
+[node name="@Line2D@103874" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Edges" index="6" unique_id=1688676187]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2837.0508, -523.0004, -2837.9492, -469.99957)
@@ -1853,7 +1851,7 @@ polygon = PackedVector2Array(-2703, -641, -2536, -643, -2447, -426, -2327, -405,
 [node name="Top" parent="Terrain/Terrain/TerrainHelper6" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@103863" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="0"]
+[node name="@Line2D@103863" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="0" unique_id=2116903580]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2685.0012, -641.2156, -2553.9988, -642.7844)
@@ -1864,7 +1862,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103865" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="1"]
+[node name="@Line2D@103865" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="1" unique_id=566343373]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2429.2695, -422.89716, -2344.7305, -408.10284)
@@ -1875,7 +1873,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103867" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="2"]
+[node name="@Line2D@103867" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="2" unique_id=1943716475]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3117.0713, -362.60077, -3096.9287, -364.39923)
@@ -1886,7 +1884,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103869" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="3"]
+[node name="@Line2D@103869" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="3" unique_id=305586440]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3060.002, -431.26083, -3026.998, -431.73917)
@@ -1897,7 +1895,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103871" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="4"]
+[node name="@Line2D@103871" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="4" unique_id=839776224]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2989.0022, -393.28122, -2960.9978, -393.71878)
@@ -1908,7 +1906,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103873" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="5"]
+[node name="@Line2D@103873" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="5" unique_id=2049825727]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2931.0007, -525.1607, -2854.9993, -525.8393)
@@ -1919,7 +1917,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@103875" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="6"]
+[node name="@Line2D@103875" type="Line2D" parent="Terrain/Terrain/TerrainHelper6/Top" index="6" unique_id=1837897282]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2820.5374, -462.63437, -2770, -450, -2725.3594, -462.2402)
@@ -1936,7 +1934,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper6" index="6"]
 occluder = SubResource("OccluderPolygon2D_sirdp")
 
-[node name="TerrainHelper7" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper7" parent="Terrain/Terrain" unique_id=830300205 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 position = Vector2(6552, 108)
 polygon = PackedVector2Array(-2767, -420, -2774, -325, -2978, -272, -3134, -329, -3135, -361, -3017, -366, -2903, -413)
@@ -1957,7 +1955,7 @@ multimesh = SubResource("MultiMesh_u1x5r")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper7" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@50362" type="Line2D" parent="Terrain/Terrain/TerrainHelper7/Edges" index="0"]
+[node name="@Line2D@50362" type="Line2D" parent="Terrain/Terrain/TerrainHelper7/Edges" index="0" unique_id=2038697569]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2767.2205, -417.00812, -2774, -325, -2978, -272, -3134, -329, -3134.9063, -358.00146)
@@ -1977,7 +1975,7 @@ polygon = PackedVector2Array(-2767, -420, -2774, -325, -2978, -272, -3134, -329,
 [node name="Top" parent="Terrain/Terrain/TerrainHelper7" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@50361" type="Line2D" parent="Terrain/Terrain/TerrainHelper7/Top" index="0"]
+[node name="@Line2D@50361" type="Line2D" parent="Terrain/Terrain/TerrainHelper7/Top" index="0" unique_id=855139969]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2885.0237, -413.92523, -2784.9763, -419.07474)
@@ -1988,7 +1986,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@50363" type="Line2D" parent="Terrain/Terrain/TerrainHelper7/Top" index="1"]
+[node name="@Line2D@50363" type="Line2D" parent="Terrain/Terrain/TerrainHelper7/Top" index="1" unique_id=1445292217]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3117.016, -361.76202, -3017, -366, -2919.641, -406.13916)
@@ -2005,7 +2003,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper7" index="6"]
 occluder = SubResource("OccluderPolygon2D_o1o3o")
 
-[node name="TerrainHelper8" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper8" parent="Terrain/Terrain" unique_id=1032823235 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 position = Vector2(2573, -219)
 polygon = PackedVector2Array(-2496, -506, -2518, -332, -2557, -257, -2604, 56, -2714, 112, -2828, 78, -2906, -16, -3020, -47, -3132, -44, -3134, -329, -3135, -361, -3017, -366, -2819, -492)
@@ -2026,7 +2024,7 @@ multimesh = SubResource("MultiMesh_2gtvs")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper8" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@51822" type="Line2D" parent="Terrain/Terrain/TerrainHelper8/Edges" index="0"]
+[node name="@Line2D@51822" type="Line2D" parent="Terrain/Terrain/TerrainHelper8/Edges" index="0" unique_id=1102502601]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2496.3762, -503.02368, -2518, -332, -2557, -257, -2604, 56, -2714, 112, -2828, 78, -2906, -16, -3020, -47, -3132, -45, -3134, -329, -3134.9063, -358.00146)
@@ -2046,7 +2044,7 @@ polygon = PackedVector2Array(-2496, -506, -2518, -332, -2557, -257, -2604, 56, -
 [node name="Top" parent="Terrain/Terrain/TerrainHelper8" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@51821" type="Line2D" parent="Terrain/Terrain/TerrainHelper8/Top" index="0"]
+[node name="@Line2D@51821" type="Line2D" parent="Terrain/Terrain/TerrainHelper8/Top" index="0" unique_id=686100579]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2801.0168, -492.77945, -2513.9832, -505.22055)
@@ -2057,7 +2055,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@51823" type="Line2D" parent="Terrain/Terrain/TerrainHelper8/Top" index="1"]
+[node name="@Line2D@51823" type="Line2D" parent="Terrain/Terrain/TerrainHelper8/Top" index="1" unique_id=1084909725]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3117.016, -361.76202, -3017, -366, -2834.1858, -482.33624)
@@ -2074,7 +2072,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper8" index="6"]
 occluder = SubResource("OccluderPolygon2D_k4fsa")
 
-[node name="TerrainHelper9" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper9" parent="Terrain/Terrain" unique_id=550881613 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 position = Vector2(3829, 45)
 polygon = PackedVector2Array(-2560, -654, -2564, -333, -2805, -260, -2916, -197, -3063, -203, -3143, -302, -3144, -361, -2978, -366, -2971, -490, -2895, -499, -2889, -573, -2886, -653)
@@ -2095,7 +2093,7 @@ multimesh = SubResource("MultiMesh_qdrk1")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper9" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@54396" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Edges" index="0"]
+[node name="@Line2D@54396" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Edges" index="0" unique_id=918906292]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2560.0374, -651.00024, -2564, -333, -2805, -260, -2916, -197, -3063, -203, -3143, -302, -3143.9492, -358.00043)
@@ -2106,7 +2104,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@54398" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Edges" index="1"]
+[node name="@Line2D@54398" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Edges" index="1" unique_id=608380443]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2977.8308, -368.99524, -2971.1692, -487.00476)
@@ -2117,7 +2115,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@54400" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Edges" index="2"]
+[node name="@Line2D@54400" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Edges" index="2" unique_id=1080856112]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2894.7542, -501.98993, -2889, -572, -2886.111, -650.0021)
@@ -2137,7 +2135,7 @@ polygon = PackedVector2Array(-2560, -654, -2564, -333, -2805, -260, -2916, -197,
 [node name="Top" parent="Terrain/Terrain/TerrainHelper9" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@54395" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Top" index="0"]
+[node name="@Line2D@54395" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Top" index="0" unique_id=2125655735]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2868, -653.05524, -2578, -653.94476)
@@ -2148,7 +2146,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@54397" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Top" index="1"]
+[node name="@Line2D@54397" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Top" index="1" unique_id=1546698107]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3126.008, -361.54193, -2995.992, -365.45807)
@@ -2159,7 +2157,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@54399" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Top" index="2"]
+[node name="@Line2D@54399" type="Line2D" parent="Terrain/Terrain/TerrainHelper9/Top" index="2" unique_id=1984786773]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2953.125, -492.1168, -2912.875, -496.8832)
@@ -2176,7 +2174,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper9" index="6"]
 occluder = SubResource("OccluderPolygon2D_ht6a2")
 
-[node name="TerrainHelper10" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper10" parent="Terrain/Terrain" unique_id=1351061346 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 position = Vector2(3476, -112)
 polygon = PackedVector2Array(-2556, -729, -2446, -729, -2455, -642, -2605, -637, -2655, -507, -2888, -374, -3005, -366, -3051, -446, -3199, -455, -3237, -843, -3332, -1054, -3345, -1287, -3011, -1279, -3008, -995, -3002, -655, -2894, -655, -2769, -659)
@@ -2197,7 +2195,7 @@ multimesh = SubResource("MultiMesh_d0hh7")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper10" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@99592" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Edges" index="0"]
+[node name="@Line2D@99592" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Edges" index="0" unique_id=764975518]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2446.3088, -726.0159, -2447.0073, -719.26495, -2447, -695, -2455, -642, -2605, -637, -2655, -507, -2888, -374, -3005, -366, -3051, -446, -3199, -455, -3237, -843, -3332, -1054, -3344.8328, -1284.0046)
@@ -2208,7 +2206,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@99594" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Edges" index="1"]
+[node name="@Line2D@99594" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Edges" index="1" unique_id=800294518]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3010.9683, -1276.0001, -3008, -995, -3002.053, -657.9995)
@@ -2228,7 +2226,7 @@ polygon = PackedVector2Array(-2556, -729, -2446, -729, -2447.0073, -719.26495, -
 [node name="Top" parent="Terrain/Terrain/TerrainHelper10" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@99591" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Top" index="0"]
+[node name="@Line2D@99591" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Top" index="0" unique_id=1789908215]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2751.8997, -664.6198, -2556, -729, -2464, -729)
@@ -2239,7 +2237,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@99593" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Top" index="1"]
+[node name="@Line2D@99593" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Top" index="1" unique_id=260773066]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-3327.0051, -1286.569, -3028.9949, -1279.431)
@@ -2250,7 +2248,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@99595" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Top" index="2"]
+[node name="@Line2D@99595" type="Line2D" parent="Terrain/Terrain/TerrainHelper10/Top" index="2" unique_id=1994609332]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-2984, -655, -2894, -655, -2786.9907, -658.4243)
@@ -2267,7 +2265,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper10" index="6"]
 occluder = SubResource("OccluderPolygon2D_3hsbr")
 
-[node name="TerrainHelper3" parent="Terrain/Terrain" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper3" parent="Terrain/Terrain" unique_id=2124378283 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 position = Vector2(4834, -216)
 polygon = PackedVector2Array(-1855.042, -433.90167, -1783, -449, -1772, -382, -1635, -383, -1667, -197, -1747, -185, -1797, -259, -1846, -278)
@@ -2292,7 +2290,7 @@ texture = ExtResource("13_a3x3d")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper3" index="2"]
 visibility_layer = 3
 
-[node name="@Line2D@66366" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Edges" index="0"]
+[node name="@Line2D@66366" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Edges" index="0" unique_id=226055447]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1847.8242, -293.97876, -1854.2178, -417.9229)
@@ -2303,7 +2301,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@66368" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Edges" index="1"]
+[node name="@Line2D@66368" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Edges" index="1" unique_id=1664660913]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1780.4078, -433.21136, -1774.5922, -397.78864)
@@ -2314,7 +2312,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@66370" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Edges" index="2"]
+[node name="@Line2D@66370" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Edges" index="2" unique_id=1852147316]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1637.7129, -367.23166, -1667, -197, -1747, -185, -1797, -259, -1832.0435, -272.31653)
@@ -2334,7 +2332,7 @@ polygon = PackedVector2Array(-1855.042, -433.90167, -1783, -449, -1772, -382, -1
 [node name="Top" parent="Terrain/Terrain/TerrainHelper3" index="4"]
 visibility_layer = 3
 
-[node name="@Line2D@66367" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Top" index="0"]
+[node name="@Line2D@66367" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Top" index="0" unique_id=751820094]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1839.3822, -437.1836, -1798.6598, -445.71808)
@@ -2345,7 +2343,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="@Line2D@66369" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Top" index="1"]
+[node name="@Line2D@66369" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/Top" index="1" unique_id=1757799886]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1756.0004, -382.1168, -1650.9996, -382.8832)
@@ -2362,7 +2360,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper3" index="6"]
 occluder = SubResource("OccluderPolygon2D_ybk2e")
 
-[node name="TerrainHelper23" parent="Terrain/Terrain/TerrainHelper3" instance=ExtResource("5_7fust")]
+[node name="TerrainHelper23" parent="Terrain/Terrain/TerrainHelper3" unique_id=1683170056 instance=ExtResource("5_7fust")]
 visibility_layer = 3
 z_index = -2
 position = Vector2(167, 121)
@@ -2384,7 +2382,7 @@ multimesh = SubResource("MultiMesh_0x4h1")
 [node name="Edges" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23" index="2"]
 visibility_layer = 3
 
-[node name="_Line2D_39987" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23/Edges" index="0"]
+[node name="_Line2D_39987" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23/Edges" index="0" unique_id=436822601]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1917.791, 89.00273, -1903.209, -469.00272)
@@ -2395,7 +2393,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="_Line2D_39989" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23/Edges" index="1"]
+[node name="_Line2D_39989" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23/Edges" index="1" unique_id=961701828]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1878.8143, -459.00217, -1866, 93, -1910.0236, 96.38643)
@@ -2413,7 +2411,7 @@ polygon = PackedVector2Array(-1903, -477, -1879, -467, -1866, 93, -1918, 97)
 [node name="Top" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23" index="4"]
 visibility_layer = 3
 
-[node name="_Line2D_39988" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23/Top" index="0"]
+[node name="_Line2D_39988" type="Line2D" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23/Top" index="0" unique_id=446686120]
 visibility_layer = 3
 texture_repeat = 2
 points = PackedVector2Array(-1895.6154, -473.92307, -1886.3846, -470.07693)
@@ -2430,7 +2428,7 @@ visibility_layer = 3
 [node name="LightOccluder2D" parent="Terrain/Terrain/TerrainHelper3/TerrainHelper23" index="6"]
 occluder = SubResource("OccluderPolygon2D_y3bow")
 
-[node name="Line2D" type="Line2D" parent="Terrain/Terrain"]
+[node name="Line2D" type="Line2D" parent="Terrain/Terrain" unique_id=317606380]
 visible = false
 texture_repeat = 2
 points = PackedVector2Array(-480, 96, -96, 96, 448, 128, 608, 96, 1216, 96)
@@ -2438,7 +2436,7 @@ width = 64.0
 texture = ExtResource("5_apqmw")
 texture_mode = 1
 
-[node name="Line2D2" type="Line2D" parent="Terrain/Terrain"]
+[node name="Line2D2" type="Line2D" parent="Terrain/Terrain" unique_id=2105032849]
 visible = false
 texture_repeat = 2
 points = PackedVector2Array(1280, -32, 1568, 0, 1696, 128, 2432, 128)
@@ -2446,90 +2444,90 @@ width = 64.0
 texture = ExtResource("5_apqmw")
 texture_mode = 1
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="." unique_id=309715335]
 
-[node name="CloverRise" parent="Objects" instance=ExtResource("5_vbgjs")]
+[node name="CloverRise" parent="Objects" unique_id=37649025 instance=ExtResource("5_vbgjs")]
 position = Vector2(4304, -112)
 mission_name = "Aquifer Ascent"
 
-[node name="CloverBounce" parent="Objects" instance=ExtResource("5_vbgjs")]
+[node name="CloverBounce" parent="Objects" unique_id=1961564195 instance=ExtResource("5_vbgjs")]
 position = Vector2(3127, -713)
 mission_name = "The Lonely Tree"
 
-[node name="CloverPeak" parent="Objects" instance=ExtResource("5_vbgjs")]
+[node name="CloverPeak" parent="Objects" unique_id=1258086488 instance=ExtResource("5_vbgjs")]
 position = Vector2(291, -1498)
 mission_name = "Atop the Hill"
 
-[node name="CloverRings" parent="Objects" instance=ExtResource("5_vbgjs")]
+[node name="CloverRings" parent="Objects" unique_id=726521960 instance=ExtResource("5_vbgjs")]
 position = Vector2(-669, 688)
 mission_name = "Loop Around the Ice Cube"
 
-[node name="CloverPetals" parent="Objects" instance=ExtResource("5_vbgjs")]
+[node name="CloverPetals" parent="Objects" unique_id=1615182333 instance=ExtResource("5_vbgjs")]
 position = Vector2(2176, 33)
 mission_name = "Clammy Petals"
 
-[node name="CollectiblePlacer11" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer11" parent="Objects" unique_id=1409080735 instance=ExtResource("6_umfqk")]
 position = Vector2(-209, 94)
 curve = SubResource("Curve2D_7lcnm")
 collectible_count = 3
 
-[node name="CollectiblePlacer14" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer14" parent="Objects" unique_id=1500480094 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_hhv6b")
 collectible_count = 8
 
-[node name="CollectiblePlacer15" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer15" parent="Objects" unique_id=1164040908 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_sirdp")
 collectible_count = 20
 
-[node name="CollectiblePlacer13" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer13" parent="Objects" unique_id=2131683856 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_tqpgy")
 collectible_count = 5
 
-[node name="CollectiblePlacer12" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer12" parent="Objects" unique_id=1467619630 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_wgjkm")
 collectible_count = 3
 
-[node name="CollectiblePlacer10" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer10" parent="Objects" unique_id=129033037 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_xbbb5")
 collectible_count = 10
 
-[node name="CollectiblePlacer9" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer9" parent="Objects" unique_id=800001552 instance=ExtResource("6_umfqk")]
 position = Vector2(-184, 0)
 curve = SubResource("Curve2D_qen6x")
 collectible_count = 10
 
-[node name="CollectiblePlacer8" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer8" parent="Objects" unique_id=1218305868 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_t5saf")
 collectible_count = 20
 
-[node name="CollectiblePlacer7" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer7" parent="Objects" unique_id=1927391252 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_mi0uo")
 collectible_count = 8
 
-[node name="CollectiblePlacer6" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer6" parent="Objects" unique_id=20179958 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_xuqel")
 collectible_count = 10
 
-[node name="CollectiblePlacer5" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer5" parent="Objects" unique_id=1709555599 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_p0svs")
 collectible_count = 10
 
-[node name="CollectiblePlacer4" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer4" parent="Objects" unique_id=747057480 instance=ExtResource("6_umfqk")]
 
-[node name="CollectiblePlacer3" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer3" parent="Objects" unique_id=938409494 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_1idy2")
 collectible_count = 16
 
-[node name="CollectiblePlacer2" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer2" parent="Objects" unique_id=1192316555 instance=ExtResource("6_umfqk")]
 curve = SubResource("Curve2D_iciii")
 collectible_count = 5
 
-[node name="CollectiblePlacer" parent="Objects" instance=ExtResource("6_umfqk")]
+[node name="CollectiblePlacer" parent="Objects" unique_id=389319374 instance=ExtResource("6_umfqk")]
 position = Vector2(-1576, 96)
 curve = SubResource("Curve2D_ec8w2")
 collectible_count = 16
 
-[node name="PetalPlacer" parent="Objects" node_paths=PackedStringArray("clover") instance=ExtResource("7_byuui")]
+[node name="PetalPlacer" parent="Objects" unique_id=393739757 node_paths=PackedStringArray("clover") instance=ExtResource("7_byuui")]
 position = Vector2(2176, 91)
 scale = Vector2(1, 1.0034722)
 curve = SubResource("Curve2D_ksba8")
@@ -2547,7 +2545,7 @@ position = Vector2(128, -64)
 [node name="Timer" parent="Objects/PetalPlacer" index="4"]
 wait_time = 20.0
 
-[node name="Rings" parent="Objects" node_paths=PackedStringArray("clover") instance=ExtResource("8_it4hg")]
+[node name="Rings" parent="Objects" unique_id=1517739965 node_paths=PackedStringArray("clover") instance=ExtResource("8_it4hg")]
 position = Vector2(-461, 692)
 curve = SubResource("Curve2D_qeywc")
 clover = NodePath("../CloverRings")
@@ -2558,7 +2556,7 @@ position = Vector2(-3, -2)
 [node name="Ring" parent="Objects/Rings" index="2"]
 position = Vector2(0, -2)
 
-[node name="PlayerSpawner" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("camera")]
+[node name="PlayerSpawner" type="AnimatedSprite2D" parent="." unique_id=316802265 node_paths=PackedStringArray("camera")]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_gbniv")
 animation = &"idle"
@@ -2566,17 +2564,17 @@ script = ExtResource("11_y0alk")
 character_scene = "res://character/character.tscn"
 camera = NodePath("../Camera2D")
 
-[node name="Camera2D" parent="." instance=ExtResource("27_jcpdl")]
+[node name="Camera2D" parent="." unique_id=2057645496 instance=ExtResource("27_jcpdl")]
 
-[node name="Decor" type="Node2D" parent="."]
+[node name="Decor" type="Node2D" parent="." unique_id=109412946]
 
-[node name="LousyBush" parent="Decor" instance=ExtResource("30_iciii")]
+[node name="LousyBush" parent="Decor" unique_id=1689441852 instance=ExtResource("30_iciii")]
 position = Vector2(-44, -749)
 
-[node name="LousyBush2" parent="Decor" instance=ExtResource("30_iciii")]
+[node name="LousyBush2" parent="Decor" unique_id=1518164172 instance=ExtResource("30_iciii")]
 position = Vector2(653, -799)
 
-[node name="LousyBush3" parent="Decor" instance=ExtResource("30_iciii")]
+[node name="LousyBush3" parent="Decor" unique_id=7443802 instance=ExtResource("30_iciii")]
 position = Vector2(1966, 98)
 scale = Vector2(-1, 1)
 

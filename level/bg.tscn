@@ -2,12 +2,12 @@
 
 [ext_resource type="Shader" uid="uid://6284i1vonqkd" path="res://shaders/sky.gdshader" id="1_r2s14"]
 
-[sub_resource type="Gradient" id="Gradient_d0ajy"]
+[sub_resource type="Gradient" id="Gradient_1wrac"]
 offsets = PackedFloat32Array(0.2, 1)
 colors = PackedColorArray(0.04, 0.04, 0.04, 1, 0.32, 0.32, 0.32, 1)
 metadata/_snap_enabled = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jcpdl"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6qpju"]
 noise_type = 5
 frequency = 0.0035
 offset = Vector3(396, 0, 0)
@@ -16,13 +16,13 @@ fractal_lacunarity = 1.365
 fractal_gain = 0.94
 fractal_weighted_strength = 0.57
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kvvhj"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e6ug2"]
 width = 256
 height = 256
-noise = SubResource("FastNoiseLite_jcpdl")
-color_ramp = SubResource("Gradient_d0ajy")
+noise = SubResource("FastNoiseLite_6qpju")
+color_ramp = SubResource("Gradient_1wrac")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l5tdo"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ynl4c"]
 shader = ExtResource("1_r2s14")
 shader_parameter/cloudscale = 1.25
 shader_parameter/speed = 0.05
@@ -39,7 +39,7 @@ shader_parameter/watercolour1 = Vector3(0.11, 0.205, 0.6)
 shader_parameter/watercolour2 = Vector3(-0.245, 1.225, 1)
 shader_parameter/horizon = 0.7
 shader_parameter/perspective = 0.75
-shader_parameter/standard_noise_tex = SubResource("NoiseTexture2D_kvvhj")
+shader_parameter/standard_noise_tex = SubResource("NoiseTexture2D_e6ug2")
 
 [sub_resource type="Gradient" id="Gradient_y0alk"]
 colors = PackedColorArray(1, 1, 1, 0.7529412, 1, 1, 1, 0)
@@ -95,7 +95,7 @@ layer = -256
 
 [node name="Clouds" type="ColorRect" parent="." unique_id=1914844457]
 texture_filter = 2
-material = SubResource("ShaderMaterial_l5tdo")
+material = SubResource("ShaderMaterial_ynl4c")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

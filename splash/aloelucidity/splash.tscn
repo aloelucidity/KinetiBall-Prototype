@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://57f5lkqsxhuw"]
+[gd_scene format=3 uid="uid://57f5lkqsxhuw"]
 
 [ext_resource type="FontFile" uid="uid://kyynbg6vvw1g" path="res://fonts/HennyPenny-Regular.ttf" id="1_phvy8"]
 [ext_resource type="Script" uid="uid://y6mp61ro8b46" path="res://splash/aloelucidity/text_animator.gd" id="1_tj1w8"]
@@ -266,7 +266,7 @@ _data = {
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5eksr"]
 blend_mode = 3
 
-[node name="Splash" type="Control"]
+[node name="Splash" type="Control" unique_id=1591111319]
 texture_filter = 2
 layout_mode = 3
 anchor_right = 0.8
@@ -275,7 +275,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.25, 1.25)
 
-[node name="TextAnimator" type="Control" parent="." node_paths=PackedStringArray("labels")]
+[node name="TextAnimator" type="Control" parent="." unique_id=1650486704 node_paths=PackedStringArray("labels")]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -284,13 +284,13 @@ labels = [NodePath("../aloelucidity/Label"), NodePath("../outline/Label")]
 effect = ExtResource("2_unwgg")
 visible_characters = 0
 
-[node name="aloelucidity" type="SubViewport" parent="."]
+[node name="aloelucidity" type="SubViewport" parent="." unique_id=921825484]
 transparent_bg = true
 size = Vector2i(912, 288)
 size_2d_override = Vector2i(304, 96)
 size_2d_override_stretch = true
 
-[node name="Label" type="RichTextLabel" parent="aloelucidity"]
+[node name="Label" type="RichTextLabel" parent="aloelucidity" unique_id=1892640294]
 clip_children = 2
 clip_contents = false
 anchors_preset = 15
@@ -310,13 +310,13 @@ visible_characters = 0
 visible_characters_behavior = 1
 visible_ratio = 0.0
 
-[node name="outline" type="SubViewport" parent="."]
+[node name="outline" type="SubViewport" parent="." unique_id=102660544]
 transparent_bg = true
 size = Vector2i(912, 288)
 size_2d_override = Vector2i(304, 96)
 size_2d_override_stretch = true
 
-[node name="Label" type="RichTextLabel" parent="outline"]
+[node name="Label" type="RichTextLabel" parent="outline" unique_id=948785153]
 clip_children = 2
 clip_contents = false
 anchors_preset = 15
@@ -338,31 +338,31 @@ visible_characters = 0
 visible_characters_behavior = 1
 visible_ratio = 0.0
 
-[node name="star" type="SubViewport" parent="."]
+[node name="star" type="SubViewport" parent="." unique_id=2020975636]
 transparent_bg = true
 size = Vector2i(288, 288)
 size_2d_override = Vector2i(96, 96)
 size_2d_override_stretch = true
 
-[node name="Polygon2D" type="Polygon2D" parent="star"]
+[node name="Polygon2D" type="Polygon2D" parent="star" unique_id=1244532772]
 position = Vector2(15, 15)
 scale = Vector2(0.5, 0.5)
 color = Color(1, 0.92, 0.39999998, 1)
 polygon = PackedVector2Array(16, 2, 19, 3, 25, 10, 31, 18, 38, 17, 46, 15, 52, 16, 50, 21, 46, 28, 42, 34, 46, 40, 51, 48, 52, 54, 45, 54, 35, 52, 26, 49, 20, 57, 12, 64, 8, 67, 6, 59, 6, 50, 7, 43, 0, 39, -7, 34, -10, 31, -6, 28, 2, 25, 8, 23, 10, 14, 14, 4)
 
-[node name="staroutline" type="SubViewport" parent="."]
+[node name="staroutline" type="SubViewport" parent="." unique_id=2004414817]
 transparent_bg = true
 size = Vector2i(288, 288)
 size_2d_override = Vector2i(96, 96)
 size_2d_override_stretch = true
 
-[node name="Polygon2D2" type="Polygon2D" parent="staroutline"]
+[node name="Polygon2D2" type="Polygon2D" parent="staroutline" unique_id=715435487]
 position = Vector2(12, 12)
 scale = Vector2(0.6, 0.6)
 color = Color(0.63, 0.32759997, 0.45359993, 1)
 polygon = PackedVector2Array(16, 2, 19, 3, 25, 10, 31, 18, 38, 17, 46, 15, 52, 16, 50, 21, 46, 28, 42, 34, 46, 40, 51, 48, 52, 54, 45, 54, 35, 52, 26, 49, 20, 57, 12, 64, 8, 67, 6, 59, 6, 50, 7, 43, 0, 39, -7, 34, -10, 31, -6, 28, 2, 25, 8, 23, 10, 14, 14, 4)
 
-[node name="BG" type="Control" parent="."]
+[node name="BG" type="Control" parent="." unique_id=851973290]
 z_index = -10
 clip_contents = true
 layout_mode = 1
@@ -372,7 +372,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Gradient" type="TextureRect" parent="BG"]
+[node name="Gradient" type="TextureRect" parent="BG" unique_id=1093476350]
 modulate = Color(0.5658, 0.6279, 0.69, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -383,7 +383,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_0pcr2")
 expand_mode = 1
 
-[node name="Gradient2" type="TextureRect" parent="BG"]
+[node name="Gradient2" type="TextureRect" parent="BG" unique_id=1073956490]
 modulate = Color(0.09799999, 0.7, 0.5394667, 1)
 material = SubResource("CanvasItemMaterial_bayb7")
 layout_mode = 1
@@ -396,7 +396,7 @@ texture = SubResource("GradientTexture2D_yqr2a")
 flip_h = true
 flip_v = true
 
-[node name="Gradient3" type="TextureRect" parent="BG"]
+[node name="Gradient3" type="TextureRect" parent="BG" unique_id=2132261767]
 modulate = Color(0.315, 0.62941664, 0.7, 1)
 material = SubResource("CanvasItemMaterial_bayb7")
 layout_mode = 1
@@ -408,7 +408,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_yqr2a")
 flip_v = true
 
-[node name="Stars" type="TextureRect" parent="BG"]
+[node name="Stars" type="TextureRect" parent="BG" unique_id=623149953]
 modulate = Color(0.016, 0.02, 0.016, 1)
 material = SubResource("CanvasItemMaterial_mdc6o")
 layout_mode = 1
@@ -422,7 +422,7 @@ texture = ExtResource("6_bayb7")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="Noise" type="TextureRect" parent="BG"]
+[node name="Noise" type="TextureRect" parent="BG" unique_id=260907101]
 material = SubResource("CanvasItemMaterial_ad2h1")
 layout_mode = 1
 anchors_preset = 15
@@ -434,7 +434,7 @@ texture = SubResource("NoiseTexture2D_mdc6o")
 expand_mode = 1
 script = ExtResource("5_0pcr2")
 
-[node name="Shadow" type="TextureRect" parent="BG"]
+[node name="Shadow" type="TextureRect" parent="BG" unique_id=1770521886]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -444,7 +444,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_mdc6o")
 expand_mode = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=179825644]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -452,11 +452,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LogoHolder" type="Control" parent="CenterContainer"]
+[node name="LogoHolder" type="Control" parent="CenterContainer" unique_id=1519727841]
 custom_minimum_size = Vector2(256, 78)
 layout_mode = 2
 
-[node name="OutlineShadow" type="TextureRect" parent="CenterContainer/LogoHolder"]
+[node name="OutlineShadow" type="TextureRect" parent="CenterContainer/LogoHolder" unique_id=1031723342]
 modulate = Color(0, 0, 0.32, 0.2509804)
 material = SubResource("ShaderMaterial_qfdyy")
 layout_mode = 1
@@ -474,7 +474,7 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_hhj4p")
 expand_mode = 1
 
-[node name="Logo" type="TextureRect" parent="CenterContainer/LogoHolder/OutlineShadow"]
+[node name="Logo" type="TextureRect" parent="CenterContainer/LogoHolder/OutlineShadow" unique_id=580445022]
 clip_children = 2
 material = SubResource("ShaderMaterial_hhj4p")
 layout_mode = 1
@@ -486,7 +486,7 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_phvy8")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/LogoHolder/OutlineShadow/Logo"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/LogoHolder/OutlineShadow/Logo" unique_id=458477904]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -496,7 +496,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_unwgg")
 expand_mode = 1
 
-[node name="Outline" type="TextureRect" parent="CenterContainer/LogoHolder"]
+[node name="Outline" type="TextureRect" parent="CenterContainer/LogoHolder" unique_id=925254876]
 material = SubResource("ShaderMaterial_qfdyy")
 layout_mode = 1
 anchors_preset = -1
@@ -513,7 +513,7 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_hhj4p")
 expand_mode = 1
 
-[node name="Logo" type="TextureRect" parent="CenterContainer/LogoHolder/Outline"]
+[node name="Logo" type="TextureRect" parent="CenterContainer/LogoHolder/Outline" unique_id=882720021]
 clip_children = 2
 material = SubResource("ShaderMaterial_hhj4p")
 layout_mode = 1
@@ -525,7 +525,7 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_phvy8")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/LogoHolder/Outline/Logo"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/LogoHolder/Outline/Logo" unique_id=751861438]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -535,7 +535,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_unwgg")
 expand_mode = 1
 
-[node name="StarHolder" type="Control" parent="CenterContainer/LogoHolder"]
+[node name="StarHolder" type="Control" parent="CenterContainer/LogoHolder" unique_id=1541622869]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -549,7 +549,7 @@ offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Luci" type="Sprite2D" parent="CenterContainer/LogoHolder/StarHolder"]
+[node name="Luci" type="Sprite2D" parent="CenterContainer/LogoHolder/StarHolder" unique_id=1219399086]
 modulate = Color(0.94, 0.971, 1, 1)
 show_behind_parent = true
 texture_filter = 1
@@ -558,12 +558,12 @@ scale = Vector2(2, 2)
 texture = ExtResource("8_5eksr")
 region_rect = Rect2(56, 0, 56, 71)
 
-[node name="Front" type="Sprite2D" parent="CenterContainer/LogoHolder/StarHolder/Luci"]
+[node name="Front" type="Sprite2D" parent="CenterContainer/LogoHolder/StarHolder/Luci" unique_id=1710608134]
 z_index = 1
 texture = ExtResource("9_7oiti")
 region_rect = Rect2(56, 0, 56, 71)
 
-[node name="LuciShadow" type="Sprite2D" parent="CenterContainer/LogoHolder/StarHolder/Luci" node_paths=PackedStringArray("luci")]
+[node name="LuciShadow" type="Sprite2D" parent="CenterContainer/LogoHolder/StarHolder/Luci" unique_id=252418544 node_paths=PackedStringArray("luci")]
 modulate = Color(0, 0, 0.32, 0.3764706)
 show_behind_parent = true
 texture_filter = 2
@@ -573,12 +573,12 @@ region_rect = Rect2(56, 0, 56, 71)
 script = ExtResource("7_ad2h1")
 luci = NodePath("..")
 
-[node name="Front" type="Sprite2D" parent="CenterContainer/LogoHolder/StarHolder/Luci/LuciShadow"]
+[node name="Front" type="Sprite2D" parent="CenterContainer/LogoHolder/StarHolder/Luci/LuciShadow" unique_id=1304333772]
 texture_filter = 2
 texture = ExtResource("8_5eksr")
 region_rect = Rect2(56, 0, 56, 71)
 
-[node name="StarOutline" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder"]
+[node name="StarOutline" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder" unique_id=1226981825]
 modulate = Color(1, 0.99974394, 1, 0.99974394)
 material = SubResource("ShaderMaterial_ncvgk")
 layout_mode = 1
@@ -597,7 +597,7 @@ pivot_offset = Vector2(26, 30)
 texture = SubResource("ViewportTexture_msrgo")
 expand_mode = 1
 
-[node name="Star" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder/StarOutline"]
+[node name="Star" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder/StarOutline" unique_id=38322770]
 clip_children = 2
 material = SubResource("ShaderMaterial_ad2h1")
 layout_mode = 1
@@ -609,7 +609,7 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_0pcr2")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder/StarOutline/Star"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder/StarOutline/Star" unique_id=987358613]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -619,7 +619,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_bayb7")
 expand_mode = 1
 
-[node name="Glow" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder/StarOutline"]
+[node name="Glow" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder/StarOutline" unique_id=151626912]
 modulate = Color(1, 0.050000012, 0.96833336, 0.4)
 show_behind_parent = true
 clip_children = 2
@@ -637,7 +637,7 @@ scale = Vector2(1.35, 1.35)
 texture = SubResource("ViewportTexture_0pcr2")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder/StarOutline/Glow"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/LogoHolder/StarHolder/StarOutline/Glow" unique_id=807884965]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -647,15 +647,13 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_bayb7")
 expand_mode = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ncvgk")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1050721336]
+libraries/ = SubResource("AnimationLibrary_ncvgk")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=441598915]
 script = ExtResource("11_7oiti")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2101046072]
 material = SubResource("CanvasItemMaterial_5eksr")
 anchors_preset = 15
 anchor_right = 1.0
@@ -665,13 +663,14 @@ grow_vertical = 2
 color = Color(0, 0, 0.043137256, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=443041018]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+disabled = true
 flat = true
 script = ExtResource("11_5eksr")
 url = "https://aloelucidity.github.io/"

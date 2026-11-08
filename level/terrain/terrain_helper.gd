@@ -47,10 +47,11 @@ func _ready() -> void:
 	light_occluder_2d.occluder.polygon = polygon
 
 
-func _set(property: StringName, _value):
-	if not Engine.is_editor_hint(): return
+func _set(property: StringName, _value) -> bool:
+	if not Engine.is_editor_hint(): return false
 	if property == "polygon":
 		decorate_terrain()
+	return false
 
 
 func get_random_points() -> Array[Vector2]:
