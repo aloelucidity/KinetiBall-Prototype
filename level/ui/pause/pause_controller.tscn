@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://drp02fc4fswll"]
+
+[ext_resource type="Script" uid="uid://7akgvmi5r0kr" path="res://level/ui/pause/pause_controller.gd" id="1_rno8o"]
+[ext_resource type="Shader" uid="uid://biec5bo86eaxg" path="res://shaders/blur_screen.gdshader" id="2_n8xnl"]
+[ext_resource type="Script" uid="uid://dt60vv5s1lf31" path="res://level/ui/scripts/screen_manager.gd" id="3_n8xnl"]
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("2_n8xnl")
+shader_parameter/blur_amount = 0.0
+
+[sub_resource type="Animation" id="3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blur/Shader:material:shader_parameter/blur_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blur/Shader:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blur/Shader/Tint:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "transition"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blur/Shader:material:shader_parameter/blur_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.000000095, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blur/Shader:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blur/Shader/Tint:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n8xnl"]
+_data = {
+&"RESET": SubResource("3"),
+&"transition": SubResource("4")
+}
+
+[node name="PauseController" type="CanvasLayer" unique_id=303363057]
+process_mode = 3
+layer = 64
+script = ExtResource("1_rno8o")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1072920365]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="PauseSound" type="AudioStreamPlayer" parent="." unique_id=1590138691]
+unique_name_in_owner = true
+bus = &"Sounds"
+
+[node name="UnpauseSound" type="AudioStreamPlayer" parent="." unique_id=1385256414]
+unique_name_in_owner = true
+bus = &"Sounds"
+
+[node name="Blur" type="CanvasLayer" parent="." unique_id=1731746618]
+layer = 62
+
+[node name="Shader" type="ColorRect" parent="Blur" unique_id=1723471220]
+visible = false
+material = SubResource("2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(1, 1, 1, 0)
+
+[node name="Tint" type="ColorRect" parent="Blur/Shader" unique_id=448950242]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0)
+
+[node name="BlurAnimation" type="AnimationPlayer" parent="Blur/Shader" unique_id=2134042157]
+unique_name_in_owner = true
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_n8xnl")
+
+[node name="Screens" type="Control" parent="." unique_id=2136597143]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_n8xnl")
+
+[connection signal="timeout" from="Cooldown" to="." method="cooldown_timeout"]

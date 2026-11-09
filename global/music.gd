@@ -2,8 +2,8 @@ extends Node
 
 
 const BGM_RESTORE_TIME: float = 5
-const UNDERWATER_PHASER_DEPTH: float = 0.5
-const UNDERWATER_NOTCH_CUTOFF: float = 2000
+const UNDERWATER_PHASER_DEPTH: float = 0.3
+const UNDERWATER_NOTCH_CUTOFF: float = 800
 const UNDERWATER_TWEEN_TIME: float = 0.2
 
 @onready var main_bus_idx: int = AudioServer.get_bus_index("Main")

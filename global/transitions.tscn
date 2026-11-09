@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbb2lppfbronl"]
+[gd_scene format=3 uid="uid://dbb2lppfbronl"]
 
 [ext_resource type="Script" uid="uid://bdy3o3mlxs33d" path="res://global/transitions.gd" id="1_yu0sd"]
-[ext_resource type="Texture2D" uid="uid://b85nlje6wdua7" path="res://global/circle_tex.tres" id="2_wgfqu"]
+[ext_resource type="Texture2D" uid="uid://b85nlje6wdua7" path="res://global/horizontal_tex.tres" id="2_wgfqu"]
 
 [sub_resource type="Gradient" id="Gradient_yu0sd"]
 
@@ -373,12 +373,12 @@ _data = {
 &"right": SubResource("Animation_yu0sd")
 }
 
-[node name="Transitions" type="CanvasLayer"]
+[node name="Transitions" type="CanvasLayer" unique_id=1474116117]
 process_mode = 3
 layer = 256
 script = ExtResource("1_yu0sd")
 
-[node name="Fade" type="TextureRect" parent="."]
+[node name="Fade" type="TextureRect" parent="." unique_id=318670329]
 visible = false
 clip_children = 1
 texture_filter = 2
@@ -389,7 +389,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wgfqu")
 
-[node name="Screenshot" type="TextureRect" parent="Fade"]
+[node name="Screenshot" type="TextureRect" parent="Fade" unique_id=1189736502]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
@@ -400,7 +400,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_wgfqu")
 expand_mode = 1
 
-[node name="Cover" type="ColorRect" parent="Fade"]
+[node name="Cover" type="ColorRect" parent="Fade" unique_id=822743663]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -409,7 +409,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_xmlmr")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=869927164]
+libraries/ = SubResource("AnimationLibrary_xmlmr")
