@@ -1,0 +1,326 @@
+[gd_scene format=3 uid="uid://cqcaro2lwqncs"]
+
+[ext_resource type="Theme" uid="uid://bhh6q0vtvmrly" path="res://level/ui/theme.tres" id="1_aaxco"]
+[ext_resource type="Script" uid="uid://84e4k7324ns8" path="res://character/lantern/rainbow.gd" id="3_u1ddy"]
+[ext_resource type="Shader" uid="uid://cw0wphwhg5eqg" path="res://shaders/bevel.gdshader" id="4_43t8y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_veayr"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_yn8gt"]
+offsets = PackedFloat32Array(0, 0.45, 0.9, 1)
+colors = PackedColorArray(1, 1, 1, 0.5647059, 1, 1, 1, 0.1254902, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 20
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4hswp"]
+gradient = SubResource("Gradient_yn8gt")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8f7i3"]
+viewport_path = NodePath("SubViewport3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8f7i3"]
+shader = ExtResource("4_43t8y")
+shader_parameter/highlight_color = Color(0.44640002, 0.54312, 0.93, 0)
+shader_parameter/shadow_color = Color(0.19607843, 0.050980393, 0.23137255, 1)
+shader_parameter/strength = 1.0
+shader_parameter/bevel_type = 1
+shader_parameter/bevel_offset = 3.0
+shader_parameter/knockout = false
+shader_parameter/blur_radius = 9.0
+shader_parameter/sample_count = 5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nckus"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nckus"]
+shader = ExtResource("4_43t8y")
+shader_parameter/highlight_color = Color(0.3825, 0.51, 0.45049998, 0)
+shader_parameter/shadow_color = Color(0.15294118, 0.21176471, 0.47843137, 0.827451)
+shader_parameter/strength = 1.0
+shader_parameter/bevel_type = 1
+shader_parameter/bevel_offset = 3.0
+shader_parameter/knockout = false
+shader_parameter/blur_radius = 9.0
+shader_parameter/sample_count = 5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d5fxy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Gradient" id="Gradient_khnpw"]
+offsets = PackedFloat32Array(0, 0.33850932, 0.5652174, 1)
+colors = PackedColorArray(0, 0.0627451, 0.1254902, 1, 0.11237143, 0.18403527, 0.24391913, 1, 0.3174, 0.40533665, 0.46, 1, 0.107083365, 0.1783275, 0.23834601, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1b4ab"]
+gradient = SubResource("Gradient_khnpw")
+fill_from = Vector2(0, 0.6)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_1b4ab"]
+offsets = PackedFloat32Array(0.1, 0.3, 0.7)
+colors = PackedColorArray(0.6156863, 0.5529412, 0.7019608, 1, 0.92, 0.976, 1, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aaxco"]
+gradient = SubResource("Gradient_1b4ab")
+width = 16
+height = 4
+fill_from = Vector2(0, 0.8)
+fill_to = Vector2(0, 0)
+repeat = 2
+metadata/_snap_enabled = true
+
+[node name="Logo" type="TextureRect" unique_id=2000842403]
+self_modulate = Color(1, 1, 1, 0.3764706)
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_veayr")
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -244.0
+offset_right = -256.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_4hswp")
+expand_mode = 1
+script = ExtResource("3_u1ddy")
+saturation = 0.25
+rainbow_speed = 1.0
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=407870795]
+transparent_bg = true
+size = Vector2i(512, 128)
+size_2d_override = Vector2i(256, 64)
+size_2d_override_stretch = true
+
+[node name="Label" type="Label" parent="SubViewport" unique_id=1644059481]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aaxco")
+theme_override_colors/font_color = Color(0.47058824, 0.7372549, 0.9411765, 1)
+theme_override_font_sizes/font_size = 48
+text = "KinetiBall"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=1238414119]
+transparent_bg = true
+size = Vector2i(512, 128)
+size_2d_override = Vector2i(256, 64)
+size_2d_override_stretch = true
+
+[node name="Label" type="Label" parent="SubViewport2" unique_id=1803777241]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aaxco")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 48
+text = "KinetiBall"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubViewport3" type="SubViewport" parent="." unique_id=596679464]
+transparent_bg = true
+size = Vector2i(512, 128)
+size_2d_override = Vector2i(256, 64)
+size_2d_override_stretch = true
+
+[node name="Label" type="Label" parent="SubViewport3" unique_id=1565119311]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aaxco")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "KinetiBall"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LogoGlow1" type="TextureRect" parent="." unique_id=435908238]
+modulate = Color(0.5328399, 0.123200014, 0.77, 0.2509804)
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.061086524
+scale = Vector2(1.1, 1)
+pivot_offset = Vector2(128, 32)
+texture = SubResource("ViewportTexture_8f7i3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoGlow2" type="TextureRect" parent="." unique_id=76588234]
+modulate = Color(0.5328399, 0.123200014, 0.77, 0.2509804)
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.05235988
+scale = Vector2(1.05, 1)
+pivot_offset = Vector2(128, 32)
+texture = SubResource("ViewportTexture_8f7i3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoOutline" type="TextureRect" parent="." unique_id=756082072]
+material = SubResource("ShaderMaterial_8f7i3")
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -32.000004
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.9)
+pivot_offset = Vector2(128, 32)
+texture = SubResource("ViewportTexture_nckus")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoShadow1" type="TextureRect" parent="LogoOutline" unique_id=548381913]
+modulate = Color(0, 0, 0, 0.2509804)
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_nckus")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoShadow2" type="TextureRect" parent="LogoOutline" unique_id=2129503410]
+modulate = Color(0, 0, 0, 0.1254902)
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_nckus")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoText" type="TextureRect" parent="LogoOutline" unique_id=190853447]
+material = SubResource("ShaderMaterial_nckus")
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_d5fxy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SubtitleOutline" type="Label" parent="." unique_id=2140968096]
+clip_children = 1
+layout_mode = 0
+offset_left = 73.46655
+offset_top = 74.32495
+offset_right = 198.46655
+offset_bottom = 109.32495
+rotation = -0.10286047
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("1_aaxco")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 20
+text = "Prototype!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gradient" type="TextureRect" parent="SubtitleOutline" unique_id=816066570]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1
+anchor_right = 1.1
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_1b4ab")
+expand_mode = 1
+
+[node name="Subtitle" type="Label" parent="." unique_id=1693404221]
+clip_children = 1
+layout_mode = 0
+offset_left = 73.46655
+offset_top = 74.32495
+offset_right = 198.46655
+offset_bottom = 109.32495
+rotation = -0.10286047
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("1_aaxco")
+theme_override_font_sizes/font_size = 20
+text = "Prototype!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gradient2" type="TextureRect" parent="Subtitle" unique_id=397639312]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_aaxco")
+expand_mode = 1

@@ -27,7 +27,7 @@ func pause() -> void:
 		unpause_sound.play()
 		
 		is_open = false
-		#screen_manager.current_screen.transition("")
+		screen_manager.current_screen.transition("")
 		blur_animation.play("transition")
 		
 		cooldown.timeout.connect(set_tree_paused.bind(false), CONNECT_ONE_SHOT)
@@ -36,7 +36,7 @@ func pause() -> void:
 		pause_sound.play()
 		
 		is_open = true
-		#screen_manager.screen_change("MainMenu")
+		screen_manager.screen_change("MainMenu")
 		blur_animation.play_backwards("transition")
 		
 		set_tree_paused(true)
@@ -44,8 +44,8 @@ func pause() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# when it's open, the pause ui itself handles the pause call
 	if not screen_manager.transitioning and event.is_action_pressed("pause"):
-		#if not is_open:
-		pause()
-		#else:
-		#	if screen_manager.current_screen == main_screen:
-		#		(main_screen.get_node("Focus") as UIFocus).back_press.emit()
+		if not is_open:
+			pause()
+		else:
+			if screen_manager.current_screen == main_screen:
+				(main_screen.get_node("Focus") as UIFocus).back_press.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://m0otgbp4rhtt"]
+[gd_scene format=3 uid="uid://m0otgbp4rhtt"]
 
 [ext_resource type="Theme" uid="uid://bhh6q0vtvmrly" path="res://level/ui/theme.tres" id="1_bpsub"]
 [ext_resource type="Script" uid="uid://2drwnm6iru87" path="res://level/ui/coins.gd" id="2_25awg"]
@@ -609,16 +609,16 @@ shader_parameter/knockout = false
 shader_parameter/blur_radius = 9.0
 shader_parameter/sample_count = 5
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="CanvasLayer" unique_id=493780307]
 layer = 128
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=949794607]
 transparent_bg = true
 size = Vector2i(368, 80)
 size_2d_override = Vector2i(92, 20)
 size_2d_override_stretch = true
 
-[node name="CoinLabel" type="Label" parent="SubViewport"]
+[node name="CoinLabel" type="Label" parent="SubViewport" unique_id=1670529545]
 unique_name_in_owner = true
 offset_top = -4.0
 offset_right = 60.0
@@ -627,13 +627,13 @@ theme = ExtResource("1_bpsub")
 theme_override_colors/font_color = Color(0.47, 0.7363333, 0.94, 1)
 text = "10000 :-‎"
 
-[node name="SubViewport2" type="SubViewport" parent="."]
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=2000318859]
 transparent_bg = true
 size = Vector2i(368, 80)
 size_2d_override = Vector2i(92, 20)
 size_2d_override_stretch = true
 
-[node name="CoinLabelOutline" type="Label" parent="SubViewport2"]
+[node name="CoinLabelOutline" type="Label" parent="SubViewport2" unique_id=869391650]
 unique_name_in_owner = true
 offset_top = -4.0
 offset_right = 60.0
@@ -644,13 +644,13 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "10000 :-‎"
 
-[node name="SubViewport3" type="SubViewport" parent="."]
+[node name="SubViewport3" type="SubViewport" parent="." unique_id=1678614832]
 transparent_bg = true
 size = Vector2i(512, 80)
 size_2d_override = Vector2i(128, 20)
 size_2d_override_stretch = true
 
-[node name="AwesomeLabel" type="Label" parent="SubViewport3"]
+[node name="AwesomeLabel" type="Label" parent="SubViewport3" unique_id=100601002]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -661,13 +661,13 @@ theme_override_colors/font_color = Color(1, 0.8640001, 0.32, 1)
 text = "Awesome!"
 horizontal_alignment = 1
 
-[node name="SubViewport4" type="SubViewport" parent="."]
+[node name="SubViewport4" type="SubViewport" parent="." unique_id=1944411466]
 transparent_bg = true
 size = Vector2i(512, 80)
 size_2d_override = Vector2i(128, 20)
 size_2d_override_stretch = true
 
-[node name="AwesomeOutline" type="Label" parent="SubViewport4"]
+[node name="AwesomeOutline" type="Label" parent="SubViewport4" unique_id=916425383]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -680,25 +680,27 @@ theme_override_constants/outline_size = 4
 text = "Awesome!"
 horizontal_alignment = 1
 
-[node name="Main" type="MarginContainer" parent="."]
+[node name="Main" type="MarginContainer" parent="." unique_id=1239610202]
 texture_filter = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 theme = ExtResource("1_bpsub")
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
-[node name="TimerHolder" type="Control" parent="Main"]
+[node name="TimerHolder" type="Control" parent="Main" unique_id=1925847216]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="Timer" type="MarginContainer" parent="Main/TimerHolder"]
+[node name="Timer" type="MarginContainer" parent="Main/TimerHolder" unique_id=1295182328]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -709,7 +711,7 @@ grow_horizontal = 0
 rotation = 0.034906585
 script = ExtResource("2_bpsub")
 
-[node name="Outline" type="Label" parent="Main/TimerHolder/Timer"]
+[node name="Outline" type="Label" parent="Main/TimerHolder/Timer" unique_id=1174932682]
 clip_children = 1
 layout_mode = 2
 size_flags_horizontal = 4
@@ -723,7 +725,7 @@ theme_override_font_sizes/font_size = 12
 text = "0:00.00"
 horizontal_alignment = 1
 
-[node name="Gradient" type="TextureRect" parent="Main/TimerHolder/Timer/Outline"]
+[node name="Gradient" type="TextureRect" parent="Main/TimerHolder/Timer/Outline" unique_id=1328231134]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.1
@@ -734,7 +736,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_w4lhn")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="Main/TimerHolder/Timer"]
+[node name="Label" type="Label" parent="Main/TimerHolder/Timer" unique_id=1943161940]
 clip_children = 1
 layout_mode = 2
 size_flags_horizontal = 4
@@ -742,7 +744,7 @@ theme_override_font_sizes/font_size = 12
 text = "0:00.00"
 horizontal_alignment = 1
 
-[node name="Gradient" type="TextureRect" parent="Main/TimerHolder/Timer/Label"]
+[node name="Gradient" type="TextureRect" parent="Main/TimerHolder/Timer/Label" unique_id=640612413]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -752,11 +754,11 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_nt68a")
 expand_mode = 1
 
-[node name="BGHolder" type="Control" parent="Main/TimerHolder/Timer"]
+[node name="BGHolder" type="Control" parent="Main/TimerHolder/Timer" unique_id=1229987380]
 show_behind_parent = true
 layout_mode = 2
 
-[node name="BG" type="TextureRect" parent="Main/TimerHolder/Timer/BGHolder"]
+[node name="BG" type="TextureRect" parent="Main/TimerHolder/Timer/BGHolder" unique_id=1729443046]
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_by7uj")
 layout_mode = 1
@@ -769,17 +771,15 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_0hbl8")
 expand_mode = 1
 
-[node name="CoinsHolder" type="Control" parent="Main"]
+[node name="CoinsHolder" type="Control" parent="Main" unique_id=615791447]
 layout_mode = 2
 script = ExtResource("2_25awg")
 
-[node name="CoinAnimPlayer" type="AnimationPlayer" parent="Main/CoinsHolder"]
+[node name="CoinAnimPlayer" type="AnimationPlayer" parent="Main/CoinsHolder" unique_id=1915214297]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_bpsub")
-}
+libraries/ = SubResource("AnimationLibrary_bpsub")
 
-[node name="BG" type="TextureRect" parent="Main/CoinsHolder"]
+[node name="BG" type="TextureRect" parent="Main/CoinsHolder" unique_id=153227272]
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_by7uj")
 custom_minimum_size = Vector2(80, 20)
@@ -792,7 +792,7 @@ rotation = -0.017453292
 texture = SubResource("GradientTexture2D_0hbl8")
 expand_mode = 1
 
-[node name="Icon" type="TextureRect" parent="Main/CoinsHolder"]
+[node name="Icon" type="TextureRect" parent="Main/CoinsHolder" unique_id=687690597]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 0
 offset_left = -4.0
@@ -803,7 +803,7 @@ rotation = -0.034906585
 texture = SubResource("GradientTexture2D_bpsub")
 expand_mode = 1
 
-[node name="Icon3" type="TextureRect" parent="Main/CoinsHolder/Icon"]
+[node name="Icon3" type="TextureRect" parent="Main/CoinsHolder/Icon" unique_id=1592353988]
 modulate = Color(0.11858133, 0.11858139, 0.11858136, 1)
 show_behind_parent = true
 custom_minimum_size = Vector2(20, 0)
@@ -820,7 +820,7 @@ pivot_offset = Vector2(16, 10)
 texture = SubResource("GradientTexture2D_25awg")
 expand_mode = 1
 
-[node name="Icon2" type="TextureRect" parent="Main/CoinsHolder/Icon"]
+[node name="Icon2" type="TextureRect" parent="Main/CoinsHolder/Icon" unique_id=1656135881]
 show_behind_parent = true
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 1
@@ -832,7 +832,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_25awg")
 expand_mode = 1
 
-[node name="Icon5" type="TextureRect" parent="Main/CoinsHolder/Icon"]
+[node name="Icon5" type="TextureRect" parent="Main/CoinsHolder/Icon" unique_id=1084381531]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.425
@@ -846,7 +846,7 @@ pivot_offset = Vector2(1.8, 8.4)
 texture = SubResource("GradientTexture2D_awyk0")
 expand_mode = 1
 
-[node name="Shade" type="TextureRect" parent="Main/CoinsHolder/Icon/Icon5"]
+[node name="Shade" type="TextureRect" parent="Main/CoinsHolder/Icon/Icon5" unique_id=1050302601]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.1
@@ -857,7 +857,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_k5424")
 expand_mode = 1
 
-[node name="Icon6" type="TextureRect" parent="Main/CoinsHolder/Icon/Icon5"]
+[node name="Icon6" type="TextureRect" parent="Main/CoinsHolder/Icon/Icon5" unique_id=501146092]
 modulate = Color(1.1661321, 1.2311625, 1.0016431, 1)
 show_behind_parent = true
 layout_mode = 1
@@ -871,7 +871,7 @@ pivot_offset = Vector2(1.8, 8.4)
 texture = SubResource("GradientTexture2D_awyk0")
 expand_mode = 1
 
-[node name="Shade" type="TextureRect" parent="Main/CoinsHolder/Icon/Icon5/Icon6"]
+[node name="Shade" type="TextureRect" parent="Main/CoinsHolder/Icon/Icon5/Icon6" unique_id=1107062965]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.1
@@ -882,7 +882,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_k5424")
 expand_mode = 1
 
-[node name="Icon4" type="TextureRect" parent="Main/CoinsHolder/Icon"]
+[node name="Icon4" type="TextureRect" parent="Main/CoinsHolder/Icon" unique_id=293825977]
 clip_children = 1
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 1
@@ -894,7 +894,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_25awg")
 expand_mode = 1
 
-[node name="Icon5" type="TextureRect" parent="Main/CoinsHolder/Icon/Icon4"]
+[node name="Icon5" type="TextureRect" parent="Main/CoinsHolder/Icon/Icon4" unique_id=2057393528]
 clip_children = 1
 material = SubResource("CanvasItemMaterial_nbx26")
 custom_minimum_size = Vector2(20, 0)
@@ -907,7 +907,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_ufeon")
 expand_mode = 1
 
-[node name="Coins" type="HBoxContainer" parent="Main/CoinsHolder"]
+[node name="Coins" type="HBoxContainer" parent="Main/CoinsHolder" unique_id=1632177998]
 layout_mode = 1
 offset_right = 124.0
 offset_bottom = 20.0
@@ -915,18 +915,18 @@ rotation = -0.034906585
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="IconPadding" type="Control" parent="Main/CoinsHolder/Coins"]
+[node name="IconPadding" type="Control" parent="Main/CoinsHolder/Coins" unique_id=675416574]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="Text" type="TextureRect" parent="Main/CoinsHolder/Coins"]
+[node name="Text" type="TextureRect" parent="Main/CoinsHolder/Coins" unique_id=353847469]
 material = SubResource("ShaderMaterial_0hbl8")
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 texture = SubResource("ViewportTexture_pmsjn")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="Main/CoinsHolder/Coins/Text"]
+[node name="Shadow" type="TextureRect" parent="Main/CoinsHolder/Coins/Text" unique_id=2037306609]
 modulate = Color(1, 1, 1, 0.1254902)
 show_behind_parent = true
 layout_mode = 1
@@ -944,7 +944,7 @@ pivot_offset = Vector2(28, 8)
 texture = SubResource("ViewportTexture_0hbl8")
 expand_mode = 1
 
-[node name="Shadow2" type="TextureRect" parent="Main/CoinsHolder/Coins/Text"]
+[node name="Shadow2" type="TextureRect" parent="Main/CoinsHolder/Coins/Text" unique_id=518560637]
 modulate = Color(1, 1, 1, 0.2509804)
 show_behind_parent = true
 layout_mode = 1
@@ -962,7 +962,7 @@ pivot_offset = Vector2(28, 8)
 texture = SubResource("ViewportTexture_0hbl8")
 expand_mode = 1
 
-[node name="BevelOutline" type="TextureRect" parent="Main/CoinsHolder/Coins/Text"]
+[node name="BevelOutline" type="TextureRect" parent="Main/CoinsHolder/Coins/Text" unique_id=772642674]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_by7uj")
 layout_mode = 1
@@ -974,19 +974,17 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_0hbl8")
 expand_mode = 1
 
-[node name="VictoryText" type="Control" parent="Main"]
+[node name="VictoryText" type="Control" parent="Main" unique_id=1220733083]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 script = ExtResource("4_25awg")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/VictoryText"]
-libraries = {
-&"": SubResource("AnimationLibrary_awyk0")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/VictoryText" unique_id=1980988802]
+libraries/ = SubResource("AnimationLibrary_awyk0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/VictoryText"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/VictoryText" unique_id=1561511166]
 layout_mode = 0
 offset_left = -76.0
 offset_top = -53.0
@@ -995,12 +993,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 6
 
-[node name="AwesomeHolder" type="Control" parent="Main/VictoryText/VBoxContainer"]
+[node name="AwesomeHolder" type="Control" parent="Main/VictoryText/VBoxContainer" unique_id=1529881095]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="Awesome" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder"]
+[node name="Awesome" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder" unique_id=1701946150]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_nbx26")
 layout_mode = 0
@@ -1009,7 +1007,7 @@ offset_bottom = 24.687637
 texture = SubResource("ViewportTexture_nbx26")
 expand_mode = 5
 
-[node name="BG" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder/Awesome"]
+[node name="BG" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder/Awesome" unique_id=1979634759]
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_by7uj")
 custom_minimum_size = Vector2(128, 24)
@@ -1023,7 +1021,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_hysrn")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder/Awesome"]
+[node name="Shadow" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder/Awesome" unique_id=520881192]
 modulate = Color(1, 1, 1, 0.1254902)
 show_behind_parent = true
 layout_mode = 1
@@ -1037,7 +1035,7 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_25awg")
 expand_mode = 5
 
-[node name="Shadow2" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder/Awesome"]
+[node name="Shadow2" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder/Awesome" unique_id=1887567001]
 modulate = Color(1, 1, 1, 0.2509804)
 show_behind_parent = true
 layout_mode = 1
@@ -1051,7 +1049,7 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_25awg")
 expand_mode = 5
 
-[node name="Outline" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder/Awesome"]
+[node name="Outline" type="TextureRect" parent="Main/VictoryText/VBoxContainer/AwesomeHolder/Awesome" unique_id=1748543937]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_25awg")
 layout_mode = 1
@@ -1063,13 +1061,13 @@ grow_vertical = 2
 texture = SubResource("ViewportTexture_25awg")
 expand_mode = 5
 
-[node name="InfoHolder" type="Control" parent="Main/VictoryText/VBoxContainer"]
+[node name="InfoHolder" type="Control" parent="Main/VictoryText/VBoxContainer" unique_id=1065895236]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Info" type="HBoxContainer" parent="Main/VictoryText/VBoxContainer/InfoHolder"]
+[node name="Info" type="HBoxContainer" parent="Main/VictoryText/VBoxContainer/InfoHolder" unique_id=675520109]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1085,10 +1083,10 @@ grow_vertical = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="MissionName" type="MarginContainer" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info"]
+[node name="MissionName" type="MarginContainer" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info" unique_id=2007335703]
 layout_mode = 2
 
-[node name="MissionOutline" type="Label" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName"]
+[node name="MissionOutline" type="Label" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName" unique_id=1248609530]
 unique_name_in_owner = true
 clip_children = 1
 layout_mode = 2
@@ -1102,7 +1100,7 @@ theme_override_font_sizes/font_size = 12
 text = "Become The 10%"
 horizontal_alignment = 1
 
-[node name="Gradient" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName/MissionOutline"]
+[node name="Gradient" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName/MissionOutline" unique_id=1481859558]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.1
@@ -1113,7 +1111,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_w4lhn")
 expand_mode = 1
 
-[node name="MissionLabel" type="Label" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName"]
+[node name="MissionLabel" type="Label" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName" unique_id=1963824638]
 unique_name_in_owner = true
 clip_children = 1
 layout_mode = 2
@@ -1121,7 +1119,7 @@ theme_override_font_sizes/font_size = 12
 text = "Become The 10%"
 horizontal_alignment = 1
 
-[node name="Gradient" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName/MissionLabel"]
+[node name="Gradient" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName/MissionLabel" unique_id=99227004]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1131,17 +1129,17 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_nt68a")
 expand_mode = 1
 
-[node name="BG" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName"]
+[node name="BG" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/MissionName" unique_id=1222026886]
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_by7uj")
 layout_mode = 2
 texture = SubResource("GradientTexture2D_hysrn")
 expand_mode = 1
 
-[node name="Counter" type="MarginContainer" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info"]
+[node name="Counter" type="MarginContainer" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info" unique_id=415867558]
 layout_mode = 2
 
-[node name="CounterLabel" type="Label" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter"]
+[node name="CounterLabel" type="Label" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter" unique_id=965880689]
 unique_name_in_owner = true
 clip_children = 1
 layout_mode = 2
@@ -1155,7 +1153,7 @@ theme_override_font_sizes/font_size = 12
 text = "(6/15)"
 horizontal_alignment = 1
 
-[node name="Gradient" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter/CounterLabel"]
+[node name="Gradient" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter/CounterLabel" unique_id=226752439]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.1
@@ -1166,7 +1164,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_w4lhn")
 expand_mode = 1
 
-[node name="CounterOutline" type="Label" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter"]
+[node name="CounterOutline" type="Label" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter" unique_id=2053629180]
 unique_name_in_owner = true
 clip_children = 1
 layout_mode = 2
@@ -1174,7 +1172,7 @@ theme_override_font_sizes/font_size = 12
 text = "(6/15)"
 horizontal_alignment = 1
 
-[node name="Gradient" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter/CounterOutline"]
+[node name="Gradient" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter/CounterOutline" unique_id=1317137788]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1184,7 +1182,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_nt68a")
 expand_mode = 1
 
-[node name="BG" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter"]
+[node name="BG" type="TextureRect" parent="Main/VictoryText/VBoxContainer/InfoHolder/Info/Counter" unique_id=1069301049]
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_by7uj")
 layout_mode = 2

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://8gdwiai7i0gj"]
+
+[ext_resource type="Script" uid="uid://dhhwnxpvfyew5" path="res://level/ui/pause/button.gd" id="1_5ac6a"]
+[ext_resource type="Texture2D" uid="uid://cgh1lo7yn30xw" path="res://level/ui/pause/box_shadow.png" id="2_g0ker"]
+[ext_resource type="FontFile" uid="uid://cc18r750p6qjm" path="res://fonts/ReggaeOne-Regular.ttf" id="3_1bsx2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v5fuj"]
+
+[sub_resource type="Gradient" id="Gradient_25hua"]
+offsets = PackedFloat32Array(0.1, 0.3, 0.7)
+colors = PackedColorArray(0.6156863, 0.5529412, 0.7019608, 1, 0.92, 0.976, 1, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ac6a"]
+gradient = SubResource("Gradient_25hua")
+width = 16
+height = 4
+fill_from = Vector2(0, 0.8)
+fill_to = Vector2(0, 0)
+repeat = 2
+metadata/_snap_enabled = true
+
+[node name="PanelContainer" type="PanelContainer" unique_id=977067635]
+texture_filter = 2
+offset_right = 48.0
+offset_bottom = 24.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v5fuj")
+script = ExtResource("1_5ac6a")
+
+[node name="Button" type="Button" parent="." unique_id=1521113107]
+layout_mode = 2
+focus_mode = 0
+action_mode = 0
+
+[node name="Shadow" type="TextureRect" parent="Button" unique_id=307830472]
+modulate = Color(1, 1, 1, 0.3764706)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 5.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_g0ker")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=733294277]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=603103714]
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_1bsx2")
+theme_override_font_sizes/font_size = 13
+text = "Button"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gradient" type="TextureRect" parent="MarginContainer/Label" unique_id=1931794345]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_5ac6a")
+expand_mode = 1

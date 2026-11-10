@@ -31,7 +31,9 @@ func change_scene(scene_path: String, character: Character, transition_dir: int)
 	screenshot.texture = ImageTexture.create_from_image(
 		get_viewport().get_texture().get_image())
 	
+	
 	animation_player.play("prepare")
+	fade.show.call_deferred()
 	
 	get_tree().call_deferred("change_scene_to_file", scene_path)
 	await get_tree().scene_changed
@@ -70,5 +72,6 @@ func change_scene(scene_path: String, character: Character, transition_dir: int)
 	
 	await animation_player.animation_finished
 	
+	fade.hide.call_deferred()
 	screenshot.texture = null
 	transitioning = false

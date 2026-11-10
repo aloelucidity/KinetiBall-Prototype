@@ -1,0 +1,255 @@
+[gd_scene format=3 uid="uid://bdw354jo875l"]
+
+[ext_resource type="Script" uid="uid://det46sj338a2d" path="res://level/ui/scripts/screen.gd" id="1_gkpnp"]
+[ext_resource type="Script" uid="uid://c58d7lnsi04kr" path="res://level/ui/scripts/ui_focus.gd" id="2_l7bw6"]
+[ext_resource type="Script" uid="uid://yr6fkb5o0mr3" path="res://level/ui/pause/pause_main/button_functions.gd" id="3_micpk"]
+[ext_resource type="PackedScene" uid="uid://cqcaro2lwqncs" path="res://splash/kinetiball/logo.tscn" id="3_umkiq"]
+[ext_resource type="PackedScene" uid="uid://8gdwiai7i0gj" path="res://level/ui/pause/button.tscn" id="4_b4kch"]
+[ext_resource type="Script" uid="uid://cnwxss2i8vepk" path="res://level/ui/pause/press_countdown.gd" id="6_wcx8o"]
+
+[sub_resource type="Animation" id="Animation_b4kch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer:offset_transform_position_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/HBoxContainer:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/MarginContainer/Logo:offset_transform_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/MarginContainer/Logo:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/MarginContainer/Logo:offset_transform_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_l7bw6"]
+resource_name = "transition"
+length = 0.39999999999999997
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -8), Vector2(0, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer:offset_transform_position_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 2.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/HBoxContainer:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/MarginContainer/Logo:offset_transform_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.7, 0.7)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/MarginContainer/Logo:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/MarginContainer/Logo:offset_transform_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(-2, 2, 1),
+"update": 0,
+"values": [0.0, -0.03490658503988659, 0.08726646259971647]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_umkiq"]
+_data = {
+&"RESET": SubResource("Animation_b4kch"),
+&"transition": SubResource("Animation_l7bw6")
+}
+
+[node name="MainMenu" type="Control" unique_id=308382327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gkpnp")
+metadata/_custom_type_script = "uid://det46sj338a2d"
+
+[node name="Focus" type="Control" parent="." unique_id=1572431091]
+layout_mode = 1
+anchors_preset = 0
+script = ExtResource("2_l7bw6")
+metadata/_custom_type_script = "uid://c58d7lnsi04kr"
+
+[node name="ButtonFunctions" type="Control" parent="." unique_id=2137768799]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_micpk")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1872663789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=281587500]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=2007112137]
+layout_mode = 2
+theme_override_constants/margin_left = 96
+
+[node name="Logo" parent="MarginContainer/MarginContainer" unique_id=2000842403 instance=ExtResource("3_umkiq")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=508118544]
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(1, 0.5)
+theme_override_constants/separation = 32
+alignment = 2
+
+[node name="Resume" parent="MarginContainer/HBoxContainer" unique_id=786432390 instance=ExtResource("4_b4kch")]
+layout_mode = 2
+label_text = "Resume"
+
+[node name="Options" parent="MarginContainer/HBoxContainer" unique_id=977067635 instance=ExtResource("4_b4kch")]
+layout_mode = 2
+label_text = "Options"
+
+[node name="MoreGames" parent="MarginContainer/HBoxContainer" unique_id=1657525555 instance=ExtResource("4_b4kch")]
+layout_mode = 2
+label_text = "More games!"
+
+[node name="Quit" parent="MarginContainer/HBoxContainer" unique_id=747533964 instance=ExtResource("4_b4kch")]
+layout_mode = 2
+label_text = "Quit"
+
+[node name="PressCountdown" type="Node" parent="MarginContainer/HBoxContainer/Quit" unique_id=583248146]
+script = ExtResource("6_wcx8o")
+countdown_style = 2
+metadata/_custom_type_script = "uid://cnwxss2i8vepk"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=229417321]
+libraries/ = SubResource("AnimationLibrary_umkiq")
+
+[connection signal="back_press" from="Focus" to="ButtonFunctions" method="resume"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Resume" to="ButtonFunctions" method="resume"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Quit/PressCountdown" to="ButtonFunctions" method="quit"]

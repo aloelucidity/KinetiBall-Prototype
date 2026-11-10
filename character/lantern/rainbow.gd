@@ -7,5 +7,5 @@ extends TextureRect
 
 
 func _process(_delta: float) -> void:
-	modulate.h = wrapf(Time.get_unix_time_from_system() * rainbow_speed, 0.0, 1.0)
-	modulate.s = saturation
+	self_modulate.h = wrapf(Time.get_unix_time_from_system() * rainbow_speed, 0.0, 1.0)
+	self_modulate.s = saturation

@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://efy1h0elfphj" path="res://splash/aloelucidity/luci_shadow.gd" id="7_ad2h1"]
 [ext_resource type="Texture2D" uid="uid://cbty870jw7rhs" path="res://splash/aloelucidity/luci-logo-back.png" id="8_5eksr"]
 [ext_resource type="Texture2D" uid="uid://krtfomrml7xk" path="res://splash/aloelucidity/luci-logo-front.png" id="9_7oiti"]
-[ext_resource type="Script" uid="uid://cye63up7o3gsi" path="res://splash/website_button.gd" id="11_5eksr"]
 [ext_resource type="Script" uid="uid://br8ijh5tbx1e4" path="res://splash/canvas_layer.gd" id="11_7oiti"]
 
 [sub_resource type="Gradient" id="Gradient_ad2h1"]
@@ -661,17 +660,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0.043137256, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=443041018]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-disabled = true
-flat = true
-script = ExtResource("11_5eksr")
-url = "https://aloelucidity.github.io/"
 metadata/_edit_use_anchors_ = true
