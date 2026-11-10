@@ -5,10 +5,13 @@ extends Control
 signal back_press
 
 @export var disabled: bool
-@export var default_focus: Button
+@export var default_focus: Control
 
 
 func _ready() -> void:
+	## panelcontainer wrapper means we can't rely on it as the sole source of button truth :(
+	if default_focus is AnimatedButton:
+		default_focus = default_focus.button
 	if owner is Screen:
 		var screen: Screen = owner
 		screen.screen_opened.connect(focus_node)

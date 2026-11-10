@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bge0n8af06jnl"]
+[gd_scene format=3 uid="uid://bge0n8af06jnl"]
 
 [ext_resource type="Script" uid="uid://jm36w45h82u2" path="res://level/objects/collectible_placer/collectible_placer.gd" id="1_323w8"]
 [ext_resource type="PackedScene" uid="uid://mbhx7msyq6o7" path="res://level/objects/coin/coin.tscn" id="2_75x72"]
@@ -15,16 +15,17 @@ stream_1/weight = 0.5
 stream_2/stream = ExtResource("5_26njq")
 stream_2/weight = 0.5
 
-[node name="CollectiblePlacer" type="Path2D"]
+[node name="CollectiblePlacer" type="Path2D" unique_id=1094743791]
 script = ExtResource("1_323w8")
 collectible_scene = ExtResource("2_75x72")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=837521111]
 rotation = 3.1415927
 rotates = false
 
-[node name="Collectibles" type="Node2D" parent="."]
+[node name="Collectibles" type="Node2D" parent="." unique_id=39478430]
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=262649006]
 stream = SubResource("AudioStreamRandomizer_cxc4e")
+volume_db = -2.0
 bus = &"Sounds"

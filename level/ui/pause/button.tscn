@@ -30,7 +30,6 @@ script = ExtResource("1_5ac6a")
 
 [node name="Button" type="Button" parent="." unique_id=1521113107]
 layout_mode = 2
-focus_mode = 0
 action_mode = 0
 
 [node name="Shadow" type="TextureRect" parent="Button" unique_id=307830472]

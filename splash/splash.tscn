@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceqrkk71yaaw2"]
+[gd_scene format=3 uid="uid://ceqrkk71yaaw2"]
 
 [ext_resource type="PackedScene" uid="uid://dj0qrjoaksuqx" path="res://splash/wildjam/splash.tscn" id="1_boi4q"]
 [ext_resource type="Script" uid="uid://cxfbihrvuukpx" path="res://splash/splash.gd" id="1_n34ou"]
 [ext_resource type="PackedScene" uid="uid://57f5lkqsxhuw" path="res://splash/aloelucidity/splash.tscn" id="2_n34ou"]
 [ext_resource type="PackedScene" uid="uid://dpbe3ct45qy52" path="res://splash/kinetiball/splash.tscn" id="4_n2i7i"]
 
-[node name="Splash" type="Control"]
+[node name="Splash" type="Control" unique_id=2054550927]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,10 +14,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n34ou")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=307872900]
 layer = -128
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1169791782]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,14 +25,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="WildJam" parent="." instance=ExtResource("1_boi4q")]
+[node name="WildJam" parent="." unique_id=1175972196 instance=ExtResource("1_boi4q")]
 visible = false
 layout_mode = 1
 
-[node name="Luci" parent="." instance=ExtResource("2_n34ou")]
+[node name="Luci" parent="." unique_id=1165326532 instance=ExtResource("2_n34ou")]
 visible = false
 layout_mode = 1
 
-[node name="KinetiBall" parent="." instance=ExtResource("4_n2i7i")]
+[node name="KinetiBall" parent="." unique_id=1188018482 instance=ExtResource("4_n2i7i")]
 visible = false
 layout_mode = 1

@@ -84,7 +84,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_l7bw6"]
 resource_name = "transition"
-length = 0.39999999999999997
+length = 0.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -175,10 +175,11 @@ grow_vertical = 2
 script = ExtResource("1_gkpnp")
 metadata/_custom_type_script = "uid://det46sj338a2d"
 
-[node name="Focus" type="Control" parent="." unique_id=1572431091]
+[node name="Focus" type="Control" parent="." unique_id=1572431091 node_paths=PackedStringArray("default_focus")]
 layout_mode = 1
 anchors_preset = 0
 script = ExtResource("2_l7bw6")
+default_focus = NodePath("../MarginContainer/HBoxContainer/Resume")
 metadata/_custom_type_script = "uid://c58d7lnsi04kr"
 
 [node name="ButtonFunctions" type="Control" parent="." unique_id=2137768799]

@@ -30,3 +30,10 @@ func _ready() -> void:
 	
 	Globals.is_splash = false
 	Transitions.change_scene("res://level/level_scenes/tutorial.tscn", null, 0)
+
+func _input(event: InputEvent) -> void:
+	if not is_visible_in_tree(): return
+	if event.is_action_pressed("ui_cancel"):
+		if luci_player.is_playing():
+			luci_player.speed_scale = INF
+			Music.fade_jingle()

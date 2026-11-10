@@ -16,11 +16,20 @@ const UNDERWATER_TWEEN_TIME: float = 0.2
 
 @onready var intro_jingle: AudioStreamPlayer = $IntroJingle
 
+var jingle_fade_tween: Tween
 var fade_tween: Tween
 var victory_tween: Tween
 var water_tween: Tween
 var is_underwater: bool
 var stop_restore: bool
+
+
+func fade_jingle() -> void:
+	if is_instance_valid(fade_tween):
+		jingle_fade_tween.kill()
+	
+	jingle_fade_tween = create_tween()
+	jingle_fade_tween.tween_property(intro_jingle, "volume_linear", 0.0, 0.25)
 
 
 func fade_bgm() -> void:
