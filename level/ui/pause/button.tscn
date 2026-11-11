@@ -115,11 +115,11 @@ color_tint = Color(0.88, 0.70576006, 0.5632, 1)
 [node name="NOSCALE_ShadowMargin" type="MarginContainer" parent="." unique_id=1449411709]
 show_behind_parent = true
 layout_mode = 2
-theme_override_constants/margin_right = -12
-theme_override_constants/margin_bottom = -10
+theme_override_constants/margin_right = -18
+theme_override_constants/margin_bottom = -14
 
 [node name="Shadow" type="TextureRect" parent="NOSCALE_ShadowMargin" unique_id=307830472]
-modulate = Color(1, 1, 1, 0.3764706)
+modulate = Color(1, 1, 1, 0.5019608)
 show_behind_parent = true
 layout_mode = 2
 mouse_filter = 2
