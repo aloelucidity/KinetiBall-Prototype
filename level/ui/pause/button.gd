@@ -2,15 +2,16 @@ class_name AnimatedButton
 extends PanelContainer
 
 
+@onready var label_outline: Label = $MarginContainer/LabelOutline
 @onready var label: Label = $MarginContainer/Label
-@onready var button: Button = $Button
+@onready var button: Button = $NOSCALE_Button
 
 @export_group("Text")
 @export var label_text: String
 
 @export_group("Color")
 @export var modulate_self: bool = true
-@export var color_tint: Color = Color.DODGER_BLUE
+@export var color_tint: Color = Color.RED
 @export var tint_speed: float = 8
 
 @export_group("Floating")
@@ -64,6 +65,8 @@ func _ready() -> void:
 func set_text(text: String) -> void:
 	label.text = text
 	label.visible = (text.length() > 0) ## to fix a clipping issue
+	label_outline.text = label.text
+	label_outline.visible = label.visible
 
 
 func mouse_entered():
@@ -113,6 +116,6 @@ func _process(delta: float) -> void:
 	
 	if not is_equal_approx(children_scale_intensity, 1.0):
 		for child in get_children():
-			if child is Control and child != button:
+			if child is Control and not child.name.begins_with("NOSCALE"):
 				child.offset_transform_enabled = true
 				child.offset_transform_scale = Vector2.ONE + (offset_transform_scale - Vector2.ONE) * children_scale_intensity
