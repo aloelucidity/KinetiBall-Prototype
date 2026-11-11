@@ -21,6 +21,7 @@ extends PanelContainer
 @export_group("Rotating")
 @export var rotate_speed: float = 0.75
 @export var rotate_intensity: float = 3
+@export var rotate_offset: float
 
 @export_group("Scaling")
 @export var scale_speed: float = 6
@@ -50,6 +51,8 @@ func _ready() -> void:
 	await get_tree().process_frame
 	button.connect("mouse_entered", mouse_entered)
 	button.connect("mouse_exited", mouse_exited)
+	button.connect("focus_entered", mouse_entered)
+	button.connect("focus_exited", mouse_exited)
 	button.connect("pressed", button_pressed)
 	
 	offset_transform_enabled = true
@@ -82,6 +85,7 @@ func _process(delta: float) -> void:
 	offset_transform_position.y += sin(time_offset + unix * float_speed) * float_intensity
 	offset_transform_position.y -= float_offset
 	offset_transform_rotation = deg_to_rad(sin(time_offset + unix * rotate_speed) * rotate_intensity)
+	offset_transform_rotation += deg_to_rad(rotate_offset)
 	
 	var modulate_var: String = "self_modulate" if modulate_self else "modulate"
 	self[modulate_var] = lerp(

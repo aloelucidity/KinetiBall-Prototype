@@ -10,11 +10,12 @@ signal back_press
 
 func _ready() -> void:
 	## panelcontainer wrapper means we can't rely on it as the sole source of button truth :(
-	if default_focus is AnimatedButton:
-		default_focus = default_focus.button
 	if owner is Screen:
 		var screen: Screen = owner
 		screen.screen_opened.connect(focus_node)
+	await get_tree().process_frame
+	if default_focus is AnimatedButton:
+		default_focus = default_focus.button
 
 
 func _input(event: InputEvent) -> void:
@@ -37,6 +38,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				back_press.emit()
 	
 	if disabled: return
+	
 	if not is_instance_valid(default_focus): return
 	
 	if not is_instance_valid(focus_owner):

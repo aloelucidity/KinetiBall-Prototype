@@ -302,8 +302,9 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 offset_transform_enabled = true
-offset_transform_rotation = 0.08726646
+offset_transform_rotation = 0.2617994
 offset_transform_pivot_ratio = Vector2(0.5, 0)
+offset_transform_visual_only = false
 theme_override_constants/separation = 32
 alignment = 2
 vertical = true
@@ -311,18 +312,22 @@ vertical = true
 [node name="Resume" parent="Content/Buttons" unique_id=786432390 instance=ExtResource("4_b4kch")]
 layout_mode = 2
 label_text = "Resume"
+rotate_offset = -15.0
 
 [node name="Options" parent="Content/Buttons" unique_id=977067635 instance=ExtResource("4_b4kch")]
 layout_mode = 2
 label_text = "Options"
+rotate_offset = -15.0
 
 [node name="MoreGames" parent="Content/Buttons" unique_id=1657525555 instance=ExtResource("4_b4kch")]
 layout_mode = 2
 label_text = "More games!"
+rotate_offset = -15.0
 
 [node name="Quit" parent="Content/Buttons" unique_id=747533964 instance=ExtResource("4_b4kch")]
 layout_mode = 2
 label_text = "Quit"
+rotate_offset = -15.0
 
 [node name="PressCountdown" type="Node" parent="Content/Buttons/Quit" unique_id=583248146]
 script = ExtResource("6_wcx8o")
