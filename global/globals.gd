@@ -18,6 +18,7 @@ var level_index: int = 0
 var time: float = 0
 
 var is_splash: bool = true
+var can_pause: bool = true
 var cached_mission: String
 
 signal coin_collected(new_value: int)

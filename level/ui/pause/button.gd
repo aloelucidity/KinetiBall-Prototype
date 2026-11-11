@@ -9,6 +9,10 @@ extends PanelContainer
 @export_group("Text")
 @export var label_text: String
 
+@export_group("Sounds")
+@export var hover_sound: AudioStreamPlayer
+@export var click_sound: AudioStreamPlayer
+
 @export_group("Color")
 @export var modulate_self: bool = true
 @export var color_tint: Color = Color.RED
@@ -64,13 +68,16 @@ func _ready() -> void:
 
 func set_text(text: String) -> void:
 	label.text = text
-	label.visible = (text.length() > 0) ## to fix a clipping issue
+	label.visible = (text.length() > 0) # to fix a clipping issue
 	label_outline.text = label.text
 	label_outline.visible = label.visible
 
 
 func mouse_entered():
 	hovered = true
+	# to stop the sound from playing immediately upon the game being paused
+	if not Input.is_action_just_pressed("pause"):
+		hover_sound.play()
 
 
 func mouse_exited():
@@ -80,6 +87,7 @@ func mouse_exited():
 func button_pressed():
 	override_time = 1.0
 	pressed.emit()
+	click_sound.play()
 
 
 func _process(delta: float) -> void:

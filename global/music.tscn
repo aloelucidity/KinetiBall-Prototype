@@ -6,10 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://dk87i0dqwslp3" path="res://splash/aloelucidity/jingle.ogg" id="4_5dyrq"]
 
 [node name="Music" type="Node" unique_id=270966658]
+process_mode = 3
 script = ExtResource("1_1k5wo")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1115175634]
-process_mode = 3
 stream = ExtResource("2_hw6si")
 volume_db = -4.0
 bus = &"Music"

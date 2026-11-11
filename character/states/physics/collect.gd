@@ -17,6 +17,8 @@ var target_x: float
 ## return self.name for no change!
 func _transition_check() -> String:
 	if stop_timer <= 0:
+		Globals.can_pause = true
+		
 		var cur_level: Level = Globals.levels[Globals.level_index]
 		if true: #cur_level.current_clovers >= cur_level.total_clovers:
 			cur_level.completion_time = Globals.time

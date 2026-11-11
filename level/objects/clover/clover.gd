@@ -38,6 +38,7 @@ func body_entered(body: Node2D) -> void:
 	animation_player.play("collect")
 	
 	Globals.collect_clover(mission_name, globals_id)
+	Globals.can_pause = false
 	var character: Character = body
 	var collect_physics: CollectPhysics = character.get_node("%Collect")
 	collect_physics.target_x = global_position.x

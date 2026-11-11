@@ -6,8 +6,8 @@ signal pressed
 
 enum TextStyle {left, right, replace}
 
-#const COUNTDOWN: AudioStream = preload("uid://dq058palx2mwr")
-#const COUNTDOWN_END: AudioStream = preload("uid://c6txqpvcekkwe")
+const COUNTDOWN: AudioStream = preload("res://level/ui/sounds/count.mp3")
+const COUNTDOWN_END: AudioStream = preload("res://level/ui/sounds/count_end.mp3")
 
 @onready var button: AnimatedButton = get_parent()
 @onready var initial_min_size: float = button.custom_minimum_size.x
@@ -25,7 +25,8 @@ func _ready() -> void:
 	button.button.button_up.connect(button_up)
 	
 	audio_player = AudioStreamPlayer.new()
-	audio_player.volume_db = -15
+	audio_player.bus = "Sounds"
+	audio_player.volume_db = -6.5
 	add_child(audio_player)
 
 func _physics_process(delta: float) -> void:
@@ -34,9 +35,9 @@ func _physics_process(delta: float) -> void:
 	var last_count: float = count
 	count -= delta * 3.0 # made it faster cuz it feels better
 	
-	#if ceili(last_count) != ceili(count) and count > 0:
-		#audio_player.stream = COUNTDOWN
-		#audio_player.play()
+	if ceili(last_count) != ceili(count) and count > 0:
+		audio_player.stream = COUNTDOWN
+		audio_player.play()
 	
 	update_text(count)
 	if count <= 0.0:
@@ -45,8 +46,8 @@ func _physics_process(delta: float) -> void:
 		pressed.emit()
 		button_up()
 
-		#audio_player.stream = COUNTDOWN_END
-		#audio_player.play()
+		audio_player.stream = COUNTDOWN_END
+		audio_player.play()
 
 func update_text(number: float) -> void:
 	var last_text: String = button.label.text
@@ -73,8 +74,8 @@ func button_down() -> void:
 		count = 0.01
 	else:
 		count = float(countdown_time)
-		#audio_player.stream = COUNTDOWN
-		#audio_player.play()
+		audio_player.stream = COUNTDOWN
+		audio_player.play()
 
 func button_up() -> void:
 	button.custom_minimum_size.x = initial_min_size

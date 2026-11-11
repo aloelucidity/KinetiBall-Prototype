@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://c58d7lnsi04kr" path="res://level/ui/scripts/ui_focus.gd" id="2_l7bw6"]
 [ext_resource type="Script" uid="uid://yr6fkb5o0mr3" path="res://level/ui/pause/pause_main/button_functions.gd" id="3_micpk"]
 [ext_resource type="PackedScene" uid="uid://cqcaro2lwqncs" path="res://splash/kinetiball/logo.tscn" id="3_umkiq"]
+[ext_resource type="AudioStream" uid="uid://c1qsj335deiwb" path="res://level/ui/sounds/hover_shiny.mp3" id="4_7smdm"]
 [ext_resource type="PackedScene" uid="uid://8gdwiai7i0gj" path="res://level/ui/pause/button.tscn" id="4_b4kch"]
+[ext_resource type="AudioStream" uid="uid://dfo0u2hxruyvf" path="res://level/ui/sounds/go_shiny.mp3" id="5_jgjqq"]
 [ext_resource type="Script" uid="uid://cnwxss2i8vepk" path="res://level/ui/pause/press_countdown.gd" id="6_wcx8o"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7smdm"]
@@ -254,6 +256,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_micpk")
 
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=1900074865]
+stream = ExtResource("4_7smdm")
+volume_db = 3.5
+bus = &"Sounds"
+
+[node name="GoSound" type="AudioStreamPlayer" parent="." unique_id=1288392214]
+stream = ExtResource("5_jgjqq")
+volume_db = -2.0
+bus = &"Sounds"
+
+[node name="EmptySound" type="AudioStreamPlayer" parent="." unique_id=888992635]
+bus = &"Sounds"
+
 [node name="Bars" type="MarginContainer" parent="." unique_id=1868599299]
 layout_mode = 1
 anchors_preset = 15
@@ -263,6 +278,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Glow" type="TextureRect" parent="Bars" unique_id=522130038]
+visible = false
 modulate = Color(1, 1, 1, 0.3764706)
 self_modulate = Color(0, 0.32156864, 0.6392157, 1)
 material = SubResource("CanvasItemMaterial_7smdm")
@@ -309,24 +325,32 @@ theme_override_constants/separation = 32
 alignment = 2
 vertical = true
 
-[node name="Resume" parent="Content/Buttons" unique_id=786432390 instance=ExtResource("4_b4kch")]
+[node name="Resume" parent="Content/Buttons" unique_id=786432390 node_paths=PackedStringArray("hover_sound", "click_sound") instance=ExtResource("4_b4kch")]
 layout_mode = 2
 label_text = "Resume"
+hover_sound = NodePath("../../../HoverSound")
+click_sound = NodePath("../../../EmptySound")
 rotate_offset = -10.0
 
-[node name="Options" parent="Content/Buttons" unique_id=977067635 instance=ExtResource("4_b4kch")]
+[node name="Options" parent="Content/Buttons" unique_id=977067635 node_paths=PackedStringArray("hover_sound", "click_sound") instance=ExtResource("4_b4kch")]
 layout_mode = 2
 label_text = "Options"
+hover_sound = NodePath("../../../HoverSound")
+click_sound = NodePath("../../../GoSound")
 rotate_offset = -10.0
 
-[node name="MoreGames" parent="Content/Buttons" unique_id=1657525555 instance=ExtResource("4_b4kch")]
+[node name="MoreGames" parent="Content/Buttons" unique_id=1657525555 node_paths=PackedStringArray("hover_sound", "click_sound") instance=ExtResource("4_b4kch")]
 layout_mode = 2
 label_text = "More games!"
+hover_sound = NodePath("../../../HoverSound")
+click_sound = NodePath("../../../GoSound")
 rotate_offset = -10.0
 
-[node name="Quit" parent="Content/Buttons" unique_id=747533964 instance=ExtResource("4_b4kch")]
+[node name="Quit" parent="Content/Buttons" unique_id=747533964 node_paths=PackedStringArray("hover_sound", "click_sound") instance=ExtResource("4_b4kch")]
 layout_mode = 2
 label_text = "Quit"
+hover_sound = NodePath("../../../HoverSound")
+click_sound = NodePath("../../../EmptySound")
 rotate_offset = -10.0
 
 [node name="PressCountdown" type="Node" parent="Content/Buttons/Quit" unique_id=583248146]

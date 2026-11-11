@@ -6,7 +6,7 @@ const UNDERWATER_PHASER_DEPTH: float = 0.3
 const UNDERWATER_NOTCH_CUTOFF: float = 800
 const UNDERWATER_TWEEN_TIME: float = 0.2
 
-@onready var main_bus_idx: int = AudioServer.get_bus_index("Main")
+@onready var music_bus_idx: int = AudioServer.get_bus_index("Music")
 
 @onready var bgm: AudioStreamPlayer = $BGM
 @onready var bgm_start_vol: float = bgm.volume_linear
@@ -40,6 +40,20 @@ func fade_bgm() -> void:
 	fade_tween.tween_property(bgm, "volume_linear", 0.0, 0.75)
 	fade_tween.tween_callback(bgm.set_stream_paused.bind(true)).set_delay(0.75)
 
+func pause() -> void:
+	bgm.stream_paused = true
+
+func unpause() -> void:
+	if is_instance_valid(fade_tween):
+		fade_tween.kill()
+	
+	bgm.volume_linear = 0.0
+	bgm.stream_paused = false
+	fade_tween = create_tween()
+	fade_tween.set_ease(Tween.EASE_IN)
+	fade_tween.set_trans(Tween.TRANS_CIRC)
+	fade_tween.tween_property(bgm, "volume_linear", bgm_start_vol, 0.4)
+
 
 func play_victory_theme() -> void:
 	if is_instance_valid(victory_tween):
@@ -72,16 +86,16 @@ func set_underwater(new_underwater: bool) -> void:
 		water_tween.kill()
 	
 	is_underwater = new_underwater
-	var phaser_filter: AudioEffectPhaser = AudioServer.get_bus_effect(main_bus_idx, 0)
-	var notch_filter: AudioEffectNotchFilter = AudioServer.get_bus_effect(main_bus_idx, 1)
+	var phaser_filter: AudioEffectPhaser = AudioServer.get_bus_effect(music_bus_idx, 0)
+	var notch_filter: AudioEffectNotchFilter = AudioServer.get_bus_effect(music_bus_idx, 1)
 	
 	if is_underwater:
 		water_tween = create_tween()
 		water_tween.set_parallel()
 		water_tween.tween_property(phaser_filter, "depth", UNDERWATER_PHASER_DEPTH, UNDERWATER_TWEEN_TIME)
 		water_tween.tween_property(notch_filter, "cutoff_hz", UNDERWATER_NOTCH_CUTOFF, UNDERWATER_TWEEN_TIME)
-		#AudioServer.set_bus_effect_enabled(main_bus_idx, 0, true)
-		#AudioServer.set_bus_effect_enabled(main_bus_idx, 1, true)
+		#AudioServer.set_bus_effect_enabled(music_bus_idx, 0, true)
+		#AudioServer.set_bus_effect_enabled(music_bus_idx, 1, true)
 	else:
 		water_tween = create_tween()
 		water_tween.tween_property(phaser_filter, "depth", 0.1, UNDERWATER_TWEEN_TIME)
@@ -90,5 +104,5 @@ func set_underwater(new_underwater: bool) -> void:
 
 
 func disable_effects() -> void:
-	AudioServer.set_bus_effect_enabled(main_bus_idx, 0, false)
-	AudioServer.set_bus_effect_enabled(main_bus_idx, 1, false)
+	AudioServer.set_bus_effect_enabled(music_bus_idx, 0, false)
+	AudioServer.set_bus_effect_enabled(music_bus_idx, 1, false)
