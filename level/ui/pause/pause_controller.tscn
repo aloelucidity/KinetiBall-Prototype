@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7akgvmi5r0kr" path="res://level/ui/pause/pause_controller.gd" id="1_rno8o"]
 [ext_resource type="Shader" uid="uid://biec5bo86eaxg" path="res://shaders/blur_screen.gdshader" id="2_n8xnl"]
+[ext_resource type="Shader" uid="uid://c5geocqr5lrsu" path="res://shaders/overlay.gdshader" id="3_ex8d7"]
 [ext_resource type="Script" uid="uid://dt60vv5s1lf31" path="res://level/ui/scripts/screen_manager.gd" id="3_n8xnl"]
 [ext_resource type="PackedScene" uid="uid://bdw354jo875l" path="res://level/ui/pause/pause_main/pause_main.tscn" id="4_p42ro"]
 
@@ -47,6 +48,54 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Blur/BG:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.3764706)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blur/BG:texture:fill_to")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Blur/BG:texture:fill_to:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Blur/BG:texture:fill_to:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="4"]
 resource_name = "transition"
@@ -87,12 +136,64 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Blur/BG:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.3764706), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blur/BG:texture:fill_to:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Blur/BG:texture:fill_to:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n8xnl"]
 _data = {
 &"RESET": SubResource("3"),
 &"transition": SubResource("4")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fy5ko"]
+shader = ExtResource("3_ex8d7")
+
+[sub_resource type="Gradient" id="Gradient_ex8d7"]
+offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 0.9594595, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fy5ko"]
+gradient = SubResource("Gradient_ex8d7")
+width = 192
+height = 192
+fill = 3
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
 
 [node name="PauseController" type="CanvasLayer" unique_id=303363057 node_paths=PackedStringArray("main_screen")]
 process_mode = 3
@@ -135,6 +236,16 @@ color = Color(0, 0, 0, 0)
 unique_name_in_owner = true
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_n8xnl")
+
+[node name="BG" type="TextureRect" parent="Blur" unique_id=1298224545]
+modulate = Color(1, 1, 1, 0.3764706)
+material = SubResource("ShaderMaterial_fy5ko")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_fy5ko")
 
 [node name="Screens" type="Control" parent="." unique_id=2136597143]
 unique_name_in_owner = true

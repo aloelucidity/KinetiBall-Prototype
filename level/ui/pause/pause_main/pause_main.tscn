@@ -5,24 +5,7 @@
 [ext_resource type="Script" uid="uid://yr6fkb5o0mr3" path="res://level/ui/pause/pause_main/button_functions.gd" id="3_micpk"]
 [ext_resource type="PackedScene" uid="uid://cqcaro2lwqncs" path="res://splash/kinetiball/logo.tscn" id="3_umkiq"]
 [ext_resource type="PackedScene" uid="uid://8gdwiai7i0gj" path="res://level/ui/pause/button.tscn" id="4_b4kch"]
-[ext_resource type="Shader" uid="uid://c5geocqr5lrsu" path="res://shaders/overlay.gdshader" id="4_od1hr"]
 [ext_resource type="Script" uid="uid://cnwxss2i8vepk" path="res://level/ui/pause/press_countdown.gd" id="6_wcx8o"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7smdm"]
-shader = ExtResource("4_od1hr")
-
-[sub_resource type="Gradient" id="Gradient_wcx8o"]
-offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 0.9594595, 1)
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_v5fuj"]
-gradient = SubResource("Gradient_wcx8o")
-width = 192
-height = 192
-fill = 3
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 1)
-metadata/_snap_enabled = true
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7smdm"]
 blend_mode = 1
@@ -118,7 +101,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Bars/BG:modulate")
+tracks/6/path = NodePath("Bars/Glow:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -130,58 +113,10 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Bars/BG:texture:fill_to")
+tracks/7/path = NodePath("Bars/Glow:offset_transform_scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Bars/BG:texture:fill_to:x")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Bars/BG:texture:fill_from")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.5, 0.5)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Bars/Glow:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.3764706)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Bars/Glow:offset_transform_scale")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -202,7 +137,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.4),
 "transitions": PackedFloat32Array(0.5, 2, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -8), Vector2(0, 32)]
+"values": [Vector2(0, 0), Vector2(-8, 0), Vector2(32, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -214,7 +149,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.4),
 "transitions": PackedFloat32Array(2, 2, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 2.5)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(2.5, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -267,58 +202,22 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Bars/BG:modulate")
+tracks/6/path = NodePath("Bars/Glow:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(2, 1),
+"transitions": PackedFloat32Array(-2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0.3764706), Color(1, 1, 1, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Bars/BG:texture:fill_to:x")
+tracks/7/path = NodePath("Bars/Glow:offset_transform_scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Bars/BG:texture:fill_to:x")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Bars/Glow:modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.3764706), Color(1, 1, 1, 0)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Bars/Glow:offset_transform_scale")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(-2, 1),
 "update": 0,
@@ -363,17 +262,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="TextureRect" parent="Bars" unique_id=724571866]
-modulate = Color(1, 1, 1, 0.3764706)
-material = SubResource("ShaderMaterial_7smdm")
-layout_mode = 2
-texture = SubResource("GradientTexture2D_v5fuj")
-
 [node name="Glow" type="TextureRect" parent="Bars" unique_id=522130038]
 modulate = Color(1, 1, 1, 0.3764706)
 self_modulate = Color(0, 0.32156864, 0.6392157, 1)
 material = SubResource("CanvasItemMaterial_7smdm")
-custom_minimum_size = Vector2(496, 144)
+custom_minimum_size = Vector2(192, 304)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -404,13 +297,16 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 offset_transform_enabled = true
 
-[node name="Buttons" type="HBoxContainer" parent="Content" unique_id=508118544]
+[node name="Buttons" type="BoxContainer" parent="Content" unique_id=568777055]
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 8
 offset_transform_enabled = true
-offset_transform_rotation = -0.034906585
+offset_transform_rotation = 0.08726646
+offset_transform_pivot_ratio = Vector2(0.5, 0)
 theme_override_constants/separation = 32
 alignment = 2
+vertical = true
 
 [node name="Resume" parent="Content/Buttons" unique_id=786432390 instance=ExtResource("4_b4kch")]
 layout_mode = 2
@@ -430,7 +326,7 @@ label_text = "Quit"
 
 [node name="PressCountdown" type="Node" parent="Content/Buttons/Quit" unique_id=583248146]
 script = ExtResource("6_wcx8o")
-countdown_style = 2
+countdown_style = 1
 metadata/_custom_type_script = "uid://cnwxss2i8vepk"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=229417321]
