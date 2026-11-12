@@ -31,8 +31,8 @@ func _transition_check() -> String:
 			
 			Globals.new_level(cur_level.next_stage)
 			Transitions.change_scene(target_scene, character, 0)
-		else:
-			return ground_name
+			
+		return ground_name
 	return name
 
 

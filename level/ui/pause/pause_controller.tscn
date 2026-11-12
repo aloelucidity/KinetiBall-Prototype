@@ -188,7 +188,7 @@ autostart = true
 [node name="PauseSound" type="AudioStreamPlayer" parent="." unique_id=1590138691]
 unique_name_in_owner = true
 stream = ExtResource("2_6stkh")
-volume_db = -6.0
+volume_db = -8.0
 bus = &"Sounds"
 
 [node name="UnpauseSound" type="AudioStreamPlayer" parent="." unique_id=1385256414]
